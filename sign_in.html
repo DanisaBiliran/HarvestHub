@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+    <link rel="stylesheet" href="CSS/signin-login.css">
+</head>
+<body>
+    <!-- SIGN IN OVERLAY 1 -->
+    <div id="overlay1" class="box" style="display: none;">
+        <button class="close-button" onclick="closeForm()">✖</button>
+        <form action="">
+            <!-- FIRST NAME -->
+            <label for="firstname" class="label">First Name</label>
+            <br>
+            <input type="text" id="firstname" name="firstname" class="login" placeholder ="Enter your first name" required>
+            <br>
+            <!-- LAST NAME -->
+            <label for="lastname" class="label">Last Name</label>
+            <br>
+            <input type="text" id="lastname" name="lastname" class="login" placeholder="Enter your last name" required>
+            <br>
+            <!-- EMAIL -->
+            <label for="email" class="label">Email</label>
+            <br>
+            <input type="email" id="email" name="email" class="login" placeholder="sample@email.com" pattern="[a-zA-Z0-9._%+-]+@gmail\.com">
+            <br>
+            <!-- PHONE NUMBER -->
+            <label for="phone" class="label">Phone</label>
+            <br>
+            <input type="tel" id="phone" name="phone" class="login" placeholder="+63 9*** *** ****">
+            <br>
+            <!-- PASSWORD -->
+            <label for="password1" class="label">Password</label>
+            <input type="password" id="password1" name="password1" class="login" placeholder="Enter your password" required>
+            <br>
+            <!-- CONFIRM PASSWORD -->
+            <label for="confirm_password" class="label">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" class="login" placeholder="Confirm your password" required>
+            <br>
+            <!-- SIGN IN BUTTON -->
+            <button type="submit" class="login_button">Sign in</button>
+            <br>
+
+            <!-- LOGIN -->
+            <p style="color: white; margin-bottom: 0;">Already have an account?</p>
+            <button type="#" id='toLogin' class='login_button'>Log in</button> <!-- SWITCH TO LOGIN -->
+        </form>
+    </div>
+
+    <!-- LOGIN OVERLAY 2 -->
+    <div id='overlay2' class='box' style='display: none;'>
+        <button class='close-button' onclick='closeForm()'>✖</button>
+        <form action=''> 
+            <!-- USERNAME -->
+            <label for='username' class='label'>Username</label><br/>
+            <input type='text' id='username' name='username' class='login' placeholder='Enter your username' required><br/>
+            
+            <!-- PASSWORD -->
+            <label for='password2' class='label'>Password</label><br/>
+            <input type='password' id='password2' name='password2' class='login' placeholder='Enter your password' required><br/>
+            
+            <!-- BUTTON -->
+            <button type='submit' class='login_button'>Log in</button><br/>
+        </form>
+    </div>
+
+</body>
+</html>

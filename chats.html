@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/chats.css">
+    <title>CHATS</title>
+    
+</head>
+<body>
+    <table>
+        <tr >
+            <td style="border: 1px solid black; margin: 0;" colspan="2">gugugu</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; margin: 0;">ksdniknho</td>
+            <td style="border: 1px solid black;margin: 0;">dsjhbjcbd</td>
+        </tr>
+
+    </table>
+
+<div class="chatContainer">
+    <!-- SENDING MESSAGES -->
+    <div class="sendMessage">
+        <h2>Send Message</h2>
+        <form id="messageForm" onsubmit="sendMessage(event)">
+            <input type="text" id="recipient" placeholder="Recipient" required />
+            <textarea id="message" placeholder="Type your message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- INBOX -->
+    <div class="Chat">
+        <div class="inbox">
+            <h2>Inbox</h2>
+            <div class="message-preview" onclick="openMessage('1')">
+                <strong>John Doe</strong>
+                <p>Hello! Are we still on for the meeting?</p>
+                <span class="time">10:30 AM</span>
+            </div>
+            <div class="message-preview" onclick="openMessage('2')">
+                <strong>Jane Smith</strong>
+                <p>Don't forget to submit your report!</p>
+            <span class="time">10:45 AM</span>
+        </div>
+    </div>
+
+    <!-- OPENED MESSAGE -->
+    <div class="message-display" id="message-display">
+        <h2>Message</h2>
+        <div class="message-content">
+            <p>Select a message to read.</p>
+        </div>
+
+             <!-- Reply Section -->
+             <div class="reply-section" style="display:none;" id="reply-section">
+                <textarea id="reply-message" placeholder="Type your reply here..."></textarea><br />
+                <button onclick="sendReply()">Reply</button>
+             </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+let currentRecipient = '';
+
+function openMessage(messageId) {
+    const messages = {
+        '1': { from: 'John Doe', content: 'Hello! Are we still on for the meeting?' },
+        '2': { from: 'Jane Smith', content: 'Don\'t forget to submit your report!' }
+    };
+
+    const message = messages[messageId];
+    
+    const messageDisplay = document.getElementById('message-display');
+    
+    if (message) {
+        // Update the message display area with the selected message
+        messageDisplay.innerHTML = `
+            <h2>${message.from}</h2>
+            <p>${message.content}</p>
+            
+             <!-- Reply Section -->
+             <div class="reply-section" id="reply-section">
+                <textarea id="reply-message" placeholder="Type your reply here..."></textarea><br />
+                <button onclick="sendReply()">Reply</button>
+             </div>
+        `;
+        
+        // Show reply section and set current recipient
+        document.getElementById('reply-section').style.display = 'block';
+        currentRecipient = message.from; // Set the recipient based on the selected message
+    }
+}
+
+function sendMessage(event) {
+    event.preventDefault();
+    
+    const recipient = document.getElementById('recipient').value;
+    const message = document.getElementById('message').value;
+
+    alert(`Message sent to ${recipient}: ${message}`);
+
+    // Clear the form
+    document.getElementById('recipient').value = '';
+    document.getElementById('message').value = '';
+}
+
+function sendReply() {
+    const replyMessage = document.getElementById('reply-message').value;
+
+    if (currentRecipient && replyMessage) {
+        alert(`Reply sent to ${currentRecipient}: ${replyMessage}`);
+        
+        // Clear the reply textarea
+        document.getElementById('reply-message').value = '';
+    } else {
+        alert("Please select a message to reply to.");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ABD1C6;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column; /*making sure footer is at the bottom*/
+}
+
+/* ENCLOSE ACTION BUTTONS, PROFILE PIC, USERNAME, RATING STARS */
+#container {
+    /* border: 1px solid black;  */
+    text-align: center; 
+    width: 100%; /* container takes full width */
+    position: relative; /* for positioning actionButtons */
+    flex: 1; /*making sure footer is at the bottom (allow cotainer to grow and fill space)*/
+}
+
+/* THE 3 BUTTONS ON THE TOP RIGHT */
+#actionButtons {
+    display: flex;
+    justify-content: flex-end; /* buttons to the right */
+    gap: ypx;
+    position: absolute;
+    right: 40px;
+}
+
+/* control size of icons */
+#actionButtons button img {
+    object-fit: contain;
+    height: 30px;
+}
+
+/* control background of icons: message, edit  */
+#actionButtons #message, #actionButtons #edit{
+    background-color: transparent;
+    border: none;
+}
+
+/* control logout button appearance */
+#actionButtons #logout{
+    background-color: #004643;
+    color: white;
+    border-radius: 10px;
+}
+
+/* WHERE PROFILE PIC IS */
+#profilePicContainer {
+    border: 1px solid black;
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto; /* Center PP */
+}
+
+/* PP IMAGE */
+#profilePicContainer img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* USERNAME */
+#container h1{
+    margin: 10px;
+}
+
+/* RATING STARS */
+#ratingStars {
+    margin-top: 0; /* Space between username and stars */
+}
+
+.star {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #F9BC60;
+    font-size: 30px; /* Size of the stars */
+    cursor: pointer;
+}
+
+.star.selected {
+    color: #004643; /* Color for selected stars */
+}
+
+
+/* INFOS BELOW USERNAME AND STARS CHUCHU */
+#infoNavigation {
+    width: 100%;
+    /* border: 1px solid black; */
+    justify-content: center;
+    text-align: center;
+}
+
+#infoNavigation h2 {
+    display: inline;
+    margin: 10px 15px 0 15px;
+    text-wrap: wrap;
+}
+
+/* CONTAINER FOR EACH CONTENT: gen info, products selling, etc.*/
+#infoDivsContainer{
+    width: 100%;
+    border: 1px solid black;
+    height: auto;
+    text-wrap: wrap;
+    padding: 20px;
+}
+
+/* NAV LINKS WHEN unCLICKED*/
+#infoNavigation h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+/* NAV LINKS WHEN CLICKED- underlined*/
+#infoNavigation h2 a.nav-link.active {
+    text-decoration: underline;
+}

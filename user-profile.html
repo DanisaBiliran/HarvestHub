@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/user-profile.css">
+    
+    <title>USER Information</title>
+</head>
+<body>
+    <!--HEADER, UNIVERSAL TO ALMOST ALL PAGES-->
+    <header>
+        <div class="header-left">
+            <img src="ZPICTURES/logo.png" alt="logo" style="height: 24px; width: auto; margin-right: 6px;" class="header-left">
+            <p style="color: white; font-weight: bold;" class="header-left">HarvestHub</p>
+        </div>
+        
+        <nav class="navigations">
+            <ul style="list-style-type: none;">
+                <li><a href="homepage.html" class="nav-texts">Home</a></li>
+                <li><a href="about-us.html" class="nav-texts">About us</a></li>
+                <li><a href="contacts.html" class="nav-texts">Contacts</a></li>
+            </ul>
+
+            <ul style="list-style-type: none;">
+                <li><a href="" class="nav-texts">Shop</a></li>
+                <li><a href=""><img src="ICONS/user.png" alt="user" class="header-icons"></a></li>
+                <li><a href=""><img src="ICONS/mdi--cart.png" alt="cart" class="header-icons"></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <br><br>
+    <!-- USER PROFILE SECTION -->
+    <div id="container">
+        <!-- 3 ACTION BUTTONS (message, edit, logout) -->
+        <div id="actionButtons">
+            <button id="message"><img src="ICONS/message.png" alt="Messages"></button>
+            <button id="edit"><img src="ICONS/edit.png" alt="Edit"></button>
+            <button id="logout" onclick="confirmLogout()">Logout</button>
+        </div>
+
+        <!-- PROFILE PICTURE -->
+        <div id="profilePicContainer">
+            <img src="ZPICTURES/sustain-communities.jpg" alt="">
+        </div>
+
+        <!-- USERNAME -->
+        <h1>Username</h1>
+
+        <!-- Rating -->
+        <div id="ratingStars">
+            <!-- Each star is a button -->
+            <button class="star" data-value="1">★</button>
+            <button class="star" data-value="2">★</button>
+            <button class="star" data-value="3">★</button>
+            <button class="star" data-value="4">★</button>
+            <button class="star" data-value="5">★</button>
+        </div>
+
+        <!-- Display selected rating -->
+        <div id="selectedRating"></div>
+    </div>
+
+    <!-- Navigation for Info Sections -->
+    <br><br>
+    <div id="infoNavigation">
+        <h2><a href="#" class="nav-link active" data-target='GenInformation'>General Information</a></h2>
+        <h2><a href="#" class="nav-link" data-target='productsSelling'>Products Selling</a></h2>
+        <h2><a href="#" class="nav-link" data-target='orders'>Orders</a></h2>
+        <h2><a href="#" class="nav-link" data-target='purchaseHistory'>Purchase History</a></h2>
+    </div>
+
+    <!-- WHERE INFO DIVS WILL BE SHOWN -->
+    <!-- default content is General Information -->
+    <br>
+    <div id="infoDivsContainer">
+        <div id='GenInformation'>
+            <p><b>Barangay: </b></p>
+            <p><b>Email: </b></p>
+            <p><b>Phone: </b></p>
+            <p><b>Rating: </b></p>
+        </div>
+
+        <!-- PRODUCTS SELLING -->
+
+        <div id='productsSelling' style='display:none;'>
+            <p>none ATM, backend dev na ang bahala</p>
+        </div>
+
+        <!-- ORDERS SECTION -->
+        <div id='orders' style='display:none;'>
+            <p>none ATM, neo na ang bahala</p>
+        </div>
+
+        <!-- PURCHASE HISTORY -->
+        <div id='purchaseHistory' style='display:none;'>
+            <p>none ATM, backend dev na ang bahala</p>
+        </div>
+    </div>
+
+    <br><br>
+    <!--FOOTER, UNIVERSAL TO ALMOST ALL PAGES-->
+    <footer>
+        <nav class="footerNavigations">
+            <ul style="list-style-type: none;">
+                <li><a href="terms-conditions.html" class="footer-nav-texts">Terms and Conditions</a></li>
+                <li><a href="" class="footer-nav-texts">Privacy and Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!--FOOTER, UNIVERSAL TO ALMOST ALL PAGES-->
+
+    <!-- Link to external JavaScript file -->
+     <script src="JAVASCIPT/userRating.js"></script>
+    <script src='JAVASCIPT/user-profile-divs.js'></script>
+
+
+</body>
+</html>

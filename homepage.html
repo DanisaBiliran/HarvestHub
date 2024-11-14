@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/signin-login.css">
+</head>
+<body>
+    <!--HEADER, UNIVERSAL TO ALMOST ALL PAGES-->
+    <header>
+        <div class="header-left">
+            <img src="ZPICTURES/logo.png" alt="logo" style="height: 24px; width: auto; margin-right: 6px;" class="header-left">
+            <p style="color: white; font-weight: bold;" class="header-left">HarvestHub</p>
+        </div>
+        
+        <nav class="navigations">
+            <ul style="list-style-type: none;">
+                <li><a href="" class="nav-texts">Home</a></li>
+                <li><a href="about-us.html" class="nav-texts">About us</a></li>
+                <li><a href="contacts.html" class="nav-texts">Contacts</a></li>
+            </ul>
+
+            <ul style="list-style-type: none;">
+                <li><a href="" class="nav-texts">Shop</a></li>
+                <li><a href="user-profile.html"><img src="ICONS/user.png" alt="user" class="header-icons"></a></li>
+                <li><a href=""><img src="ICONS/mdi--cart.png" alt="cart" class="header-icons"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--HEADER, UNIVERSAL TO ALMOST ALL PAGES-->
+    <br><br><br><br>
+    
+    <!-- FOR SIGN IN AND SIGN OUT -->
+    <button id="showOverlay">Sign in</button>
+
+    <div id="overlay" class="overlay">
+        <div id="overlayContent">
+            <!-- Content will be dynamically loaded here -->
+            <div id="overlay1" class="box" style="display:none;">
+                <!-- Sign-in form contents -->
+            </div>
+            <div id="overlay2" class="box" style="display:none;">
+                <!-- Login form contents -->
+            </div>
+        </div>
+        <span id="closeOverlay" class="close-button" onclick="closeForm()">&times;</span>
+    </div>
+
+    <!-- FOR "LOCATING FARMS NEAR YOU" -->
+     <br><br>
+     <button><a href="locateFarms.html">Locate farms near YOU</a></button>
+
+    <br><br><br><br>
+    <!--FOOTER, UNIVERSAL TO ALMOST ALL PAGES-->
+    <footer>
+        <nav class="footerNavigations">
+            <ul style="list-style-type: none;">
+                <li><a href="terms-conditions.html" class="footer-nav-texts">Terms and Conditions</a></li>
+                <li><a href="" class="footer-nav-texts">Privacy and Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!--FOOTER, UNIVERSAL TO ALMOST ALL PAGES-->
+
+    
+    <script src="JAVASCIPT/signin-login.js"></script>
+</body>
+</html>
