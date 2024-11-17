@@ -12,13 +12,25 @@ body{
     height:auto;
 }
 
+/* .table-about-us tr, .table-about-us td{
+    border: 1px solid white;
+} */
+
+/* CELL (above) CONTAINING LOGO */
 .with-logo{
     text-align: center;
 }
 
+/* for spacing */
+.mission-content-texts{
+    padding-right: 10px;
+}
+
+/* divide mision and vision cells equally */
 .mission-text, .vision{
     width: 50%;
 }
+
 
 .browse-harvesthub{
     background-color: #F9BC60;
@@ -45,4 +57,14 @@ pre{
 #terms-conditions a:visited{
     color: rgb(143, 143, 8) ;
 
+}
+
+
+/* PRIVACY POLICY */
+#privacy-policy-container{
+    padding: 20px;
+}
+
+#privacy-policy-container h2{
+    text-align: center;
 }
