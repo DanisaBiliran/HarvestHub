@@ -1,0 +1,51 @@
+footer {
+    width: 100%; 
+    background-color: #001C1B; 
+    padding: 1px;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    bottom: 0;
+}
+
+/* ENSURE FOOTER IS AT THE BOTTOM OF PAGE combined with margin=0 on body */
+html {
+    height: 100%; 
+    margin: 0;
+}
+
+/* NAVIGATION CONTAINER FOR FOOTER */
+.footerNavigations {
+    display: flex; 
+    align-items: center; 
+}
+
+/* FOOTER NAV TEXTS */
+.footer-nav-texts {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav-texts:hover {
+    text-decoration: underline;
+  }
+
+/* FOOTER NAVIGATION LIST STYLES */
+.footerNavigations li {
+    list-style-type: none; 
+}
+
+.footerNavigations ul {
+    display: flex; 
+}
+
+/* MEDIA QUERY FOR FOOTER RESPONSIVENESS */
+@media (max-width: 600px) {
+    .footer-nav-texts {
+        font-size: 16px;
+        margin-left: 10px; 
+        margin-right: 10px;
+    }
+}

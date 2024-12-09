@@ -1,0 +1,76 @@
+@import "../CSS/root.css";
+
+body{
+    background-color: var(--primary-color);
+    padding: 10px;
+    font-size: large;
+}
+
+/* back arrow */
+img{
+    width: 5%;
+}
+
+/* question */
+div{
+    width: 70%;
+    margin: auto; 
+}
+
+table{
+    background-color: var(--secondary-color);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    width: 70%;
+    margin: auto;
+    border-spacing: 8vw;
+    color: white;
+    box-shadow: 10px 10px 10px rgb(60, 59, 59);
+    font-size: 1.5vw;
+}
+
+td{
+    position: relative;
+    vertical-align: top;
+    width: 50%;
+
+}
+
+button{
+    background-color: var(--cta);
+    border: none;
+    border-radius: 6px;
+    display: block;
+    margin: auto;
+    font-size: larger;
+    text-align: center;
+
+    padding: 5px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #f59e1c; 
+    box-shadow: 1px 4px 11px whitesmoke;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* already have an account */
+h4{
+    margin:0;
+}
+
+/* login */
+#login{
+    text-decoration: none;
+    color: var(--cta);
+    font-weight: bold;
+}
+
+#login:hover{
+    text-decoration: underline;
+}

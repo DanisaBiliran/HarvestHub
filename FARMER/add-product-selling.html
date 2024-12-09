@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Farmer/add-product-selling.css">
+    <title>Add Product</title>
+</head>
+<body>
+    <br>
+    <a href="../FARMER/userGenInfo.html"><img class="back" src="../icons/back.png" alt="back"></a>
+    <br>
+    <h1>Add Product</h1>
+
+    <form action="">
+        <!-- PRODUCT NAME -->
+        <label for="product-name">Product Name</label><br>
+        <input type="text" name="product-name" id="product-name" placeholder="Add product name">
+        <br><br>
+
+        <!-- CATEGORY -->
+        <label for="category">Select Category:</label><br>
+        <select id="category" name="category">
+            <option value="fresh-produce">Fresh Produce</option>
+            <option value="dairy-products">Dairy Products</option>
+            <option value="meat-and-poultry">Meat and Poultry</option>
+            <option value="grains-and-legumes">Grains and Legumes</option>
+        </select>
+        <br><br>
+
+        <!-- MEASUREMENT UNIT -->
+        <label for="measurement-unit">Select Measurement Unit:</label><br>
+        <select id="measurement-unit" name="measurement-unit">
+            <option value="piece">Piece</option>
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+            <option value="L">Liter (L)</option>
+            <option value="mL">Milliliter (mL)</option>
+        </select>
+        <br><br><br>
+
+        <!-- PRICE [per measurement unit] -->
+        <label for="price">Price [per measurement unit]: </label>
+        <input type="number" name="price" id="price" min="0" step="0.01" required>
+        <br><br>
+
+        <!-- STOCKS AVAILABLE -->
+        <label for="stocks-available">Stocks Available [per measurement unit]: </label>
+        <input type="number" name="stocks-available" id="stocks-available" min="0" required>
+        <br><br><br>
+
+        <!-- IMAGES -->
+        <label for="images">Select images:</label>
+        <input type="file" id="images" name="images[]" multiple accept="image/*">
+        <br><br><br>
+
+        <input type="submit" class="submit-button">
+
+    </form>
+</body>
+</html>

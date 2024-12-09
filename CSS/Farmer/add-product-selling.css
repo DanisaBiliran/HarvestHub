@@ -1,0 +1,35 @@
+@import "../root.css";
+@import "../buttons.css";
+
+body{
+    background-color: var(--primary-color);
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    background-color: var(--secondary-color);
+    color: white;
+    width: 80%;
+
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+
+    font-size: large;
+}
+
+input{
+    font-size: large;
+    width: 95%;
+}
+
+select{
+    font-size: large;
+}
+
+#price, #stocks-available{
+    width: auto;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Farmer/farmerHeader.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/Farmer/farmerUser.css">
+
+    <title>Farmer</title>
+</head>
+<body>
+    <div id="header"></div>
+
+    <!-- PROFILE PICTURE -->
+    <div id="profilePicContainer">
+        <img src="../pictures/sustain-communities.jpg" alt="profile picture">
+    </div>
+
+    <!-- USERNAME -->
+    <h1>Username</h1>
+
+    <div id="buttonContainer">
+        <button id="edit-button" ><img src="../icons/editWhite.png" alt="edit"></button>
+        <a id="chat-button" href=""><img src="../icons/message.png" alt="chats"></a>
+        <button id="logout-button">Logout</button>
+    </div>
+
+    <div id="navigation">
+        <h2><a href="#" class="nav-link active" data-target='GenInformation'>General Information</a></h2>
+        <h2><a href="#" class="nav-link" data-target='ratings'>Ratings</a></h2>
+        <h2><a href="#" class="nav-link" data-target='productsSelling'>Products Selling</a></h2>
+        <h2><a href="#" class="nav-link" data-target='orders'>Orders</a></h2>
+        <h2><a href="#" class="nav-link" data-target='sales'>Sales</a></h2>
+    </div>
+
+    <div id="info-container">
+        <!-- GENERAL INFORMATION -->
+        <!-- <div id="general-info">
+            <p>Address: </p> street, barangay, city
+            <p>Email: </p>
+            <p>Phone: </p>
+        </div> -->
+
+        <!-- RATINGS -->
+        <!-- <div id="ratings">
+            <p>Ratings: </p> average number of stars
+            <br>
+            <div id="each-rating">
+                <div id="profile-pic-container">
+                    <img src="../pictures/farmer3.jpg" alt="user profile picture">
+                </div>
+    
+                <div id="words">
+                    <p>Username: </p>
+                    <p>Rated: </p>
+                    <p>Commented: </p>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- PRODUCTS SELLING -->
+        <table id="products-selling">
+            <tr>
+                <td class="add-button" colspan="3" style="border: none;">
+                    <a href="../FARMER/add-product-selling.html"><button>+</button></a>
+                </td>
+            </tr>
+            <tr>
+                <td id="item-pic-cell">
+                    <img src="../pictures/egg.png" alt="item">
+                </td>
+
+                <td id="item-short-description">
+                    <p><b>Product: </b> Eggs </p>
+                    <p><b>Price: </b> 5.00 per piece</p>
+                    <p><b>Stocks: </b> 100 pieces left</p>
+                </td>
+
+                <td id="actions">
+                    <a href=""><button class="view-button" >view</button></a>
+                    <a href=""><button class="update-button" >update</button></a>
+                    <a href=""><button class="delete-button" >delete</button></a>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+    </div>
+
+    <br>
+
+    <div id="footer"></div>
+    
+    <!-- JS FOR LOADING HEADER AND FOOTER -->
+    <script src="../JS/Farmer/farmerHeaderFooter.js"></script>
+</body>
+</html>

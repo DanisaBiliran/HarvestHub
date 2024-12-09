@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../CSS/signUp.css">
+
+    <title>Consumer Sign Up</title>
+</head>
+<body>
+    <br>
+    <a href="signUpAs.html"><img src="../icons/back.png" alt="back"></a>
+    <h1>Consumer Sign Up</h1>
+
+    <form action="">
+        <div>
+            <!-- FIRST NAME -->
+            <label for="first-name">First Name</label><br>
+            <input type="text" name="first-name" placeholder="Enter your first name" required>
+            <br><br>
+
+            <!-- LASTNAME -->
+            <label for="last-name">Last Name</label><br>
+            <input type="text" name="last-name" placeholder="Enter your lastname" required>
+            <br>
+        </div>
+        <br><br>
+
+        <div>
+            <!-- STREET -->
+            <label for="street">Street</label><br>
+            <input type="text" name="street" placeholder="Enter street/zone" required>
+            <br><br>
+            
+            <!-- BARANGAY -->
+            <label for="barangay">Barangay</label><br>
+            <input type="text" name="barangay" placeholder="Enter Barangay" required>
+            <br><br>
+
+            <!-- CITY- READONLY (set to Zamboanga City)-->
+            <label for="city">City</label><br>
+            <input type="text" name="city" placeholder="Zamboanga City" readonly>
+            <br>
+        </div>
+        <br><br>
+
+        <div>
+            <!-- EMAIL -->
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email" placeholder="example@email.com">
+            <br><br>
+
+            <!-- PHONE -->
+            <label for="phone">Phone</label><br>
+            <input type="phone" name="phone" id="phone" placeholder="09123456789">
+            <br><br>
+
+            <!-- PASSWORD -->
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password" required>
+            <br>
+        </div>
+        <br><br>
+
+        <div id="submit">
+            <input type="submit" class="submit-button">
+        </div>
+
+    </form>
+</html>

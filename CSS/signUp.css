@@ -1,0 +1,68 @@
+@import "../CSS/root.css";
+
+body{
+    background-color: var(--primary-color);
+    padding: 10px;
+    font-size: large;
+}
+
+/* back arrow */
+img{
+    width: 5%;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    background-color: var(--secondary-color);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 70%;
+
+    padding: 20px 0 20px 0;
+    margin: auto;
+    border-spacing: 8vw;
+    color: white;
+    box-shadow: 10px 10px 10px rgb(60, 59, 59);
+    font-size: large;
+}
+
+/* DIVS INSIDE FORM */
+form div{
+    background-color: var(--secondary-color-lighter);
+    width: 85%;
+    padding: 10px 5px 10px 20px;
+    margin: auto;
+}
+
+#submit{
+    background-color: transparent;
+    width: 85%;
+    padding: 10px 25px 10px 0;
+}
+
+input{
+    font-size: large;
+    width: 90%;
+}
+
+.submit-button{
+    border: none;
+    border-radius: 8px;
+    width: auto;
+
+    background-color: var(--cta);
+    border: none;
+    border-radius: 6px;
+    font-size: larger;
+
+    padding: 5px;
+}
+
+.submit-button:hover{
+    transform: scale(1.1);
+    background-color: #f59e1c; 
+    box-shadow: 1px 4px 11px whitesmoke;
+}

@@ -1,0 +1,75 @@
+@import "roots.css";
+
+/* FOR ALL BUTTONS */
+.view-button, .update-button, .delete-button{
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.view-button:hover, .update-button:hover, .delete-button:hover {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+    box-shadow: 1px 4px 11px whitesmoke;
+}
+
+.view-button{
+    background-color: var(--view);
+}
+
+.update-button{
+    background-color: var(--update);
+}
+
+.delete-button{
+    background-color: var(--delete);
+}
+
+.add-button{
+    text-align: center;
+}
+
+/* ADD BUTTON */
+.add-button button{
+    background-color: whitesmoke;
+    border: 2px solid var(--cta);
+    border-radius: 5px;
+    box-shadow: 3px 5px 10px black;
+    
+    width: auto;
+    height: auto;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4vw;
+    font-weight: bolder;
+}
+.add-button button:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 4px 11px white;
+}
+
+/* BACK ICONBUTTON */
+.back{
+    width: 5%;
+}
+
+/* SUBMIT BUTTON */
+.submit-button{
+    border: none;
+    border-radius: 8px;
+    width: auto;
+
+    background-color: var(--cta);
+    border: none;
+    border-radius: 6px;
+    font-size: larger;
+
+    padding: 5px;
+}
+
+.submit-button:hover{
+    transform: scale(1.1);
+    background-color: #f59e1c; 
+    box-shadow: 1px 4px 11px whitesmoke;
+}

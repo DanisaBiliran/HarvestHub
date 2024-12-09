@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box; /* PADDING & BORDER IN ELEMENTS'WIDTH */
+}
+
+header {
+    width: 100%; 
+    background-color: #001C1B;
+    padding-left: 15px; 
+    padding-right: 15px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* HARVESTHUB LOGO AND NAME */
+.header-left {
+    display: flex; 
+    align-items: center;
+}
+
+/* NAVIGATION CONTAINER */
+.navigations {
+    display: flex; 
+    align-items: center; 
+    
+}
+
+
+/* NAV TEXTS, HARVESTHUB WORD NOT INCLUDED */
+.nav-texts {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; 
+    white-space: nowrap; /* NO TEXT-WRAP */
+    
+}
+
+.nav-texts:hover {
+    text-decoration: underline;
+  }
+/* HEADER ICONS ON RIGHT */
+.header-icons {
+    height: 18px;
+    width: auto;
+    margin-left: 5px;
+   
+}
+
+.header-icons:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+} 
+
+.navigations li {
+    list-style-type: none; 
+}
+
+.navigations ul {
+    display: flex; 
+}
+
+/* MEDIA CHUCHU FOR Responsiveness */
+@media (max-width: 600px) {
+    .nav-texts {
+        font-size: 16px;
+        margin-left: 10px; 
+    }
+
+    .header-icons {
+        height: 16px; 
+        margin-left: 3px; 
+    }
+   
+}
