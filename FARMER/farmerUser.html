@@ -60,7 +60,7 @@
         </div> -->
 
         <!-- PRODUCTS SELLING -->
-        <table id="products-selling">
+        <!-- <table id="products-selling">
             <tr>
                 <td class="add-button" colspan="3" style="border: none;">
                     <a href="../FARMER/add-product-selling.html"><button>+</button></a>
@@ -78,9 +78,39 @@
                 </td>
 
                 <td id="actions">
-                    <a href=""><button class="view-button" >view</button></a>
-                    <a href=""><button class="update-button" >update</button></a>
+                    <a href="view-product-selling.html"><button class="view-button" >view</button></a>
+                    <a href="updateProductSelling.html"><button class="update-button" >update</button></a>
                     <a href=""><button class="delete-button" >delete</button></a>
+                </td>
+            </tr>
+        </table> -->
+
+        <!-- ORDERS -->
+        <table id="orders-table">
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Cust. Barangay</th>
+                <th>Cost (products)</th>
+                <th>Selling Type</th>
+                <th>Actions</th>
+            </tr>
+
+            <!-- examples -->
+            <tr>
+                <td>12345</td> <!-- Order ID -->
+                <td>1/1/2024</td> <!-- Date -->
+                <td>Juan Cruz</td> <!-- Customer -->
+                <td>Recodo</td> <!-- Cust. Barangay -->
+                <td>100.00</td> <!-- Cost (products) -->
+                <td>Pickup</td> <!-- Selling Type -->
+                
+                <!-- Actions -->
+                <td>
+                    <a href=""><button class="view-button">view</button></a>
+                    <button class="update-button">accept</button>
+                    <button class="delete-button">deny</button>
                 </td>
             </tr>
         </table>

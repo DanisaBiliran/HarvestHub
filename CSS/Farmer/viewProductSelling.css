@@ -1,0 +1,74 @@
+@import "../root.css";
+@import "../buttons.css";
+
+body{
+    background-color: var(--primary-color);
+}
+
+/* "Product" and Update Button */
+#product-and-button{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+#product-and-button h1{
+    margin: 0;
+}
+
+/* GENERAL INFO OF PRODUCT */
+#product-info-container{
+    width:86%;
+    margin: auto;
+    box-shadow: 10px 10px 15px grey;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+#product-info-container p{
+    margin: 4px;
+}
+
+/* ORDERS CONTAINER */
+#orders-container{
+    width: 90%;
+    margin: auto;
+}
+
+/* ORDER NAVIGATIONS */
+#orders-container div{
+    width: 100%;
+    object-fit: cover;
+    background-color: white;
+    padding: 5px 0;
+    border: 1px solid black;
+}
+#orders-container div a{
+    font-size: 2.5vw;
+    text-decoration: none;
+    color: black;
+}
+#orders-container div a:hover{
+    text-decoration: underline;
+    background-color: var(--cta);
+}
+
+/* SOLD AND CANCELLED ORDER TABLE */
+table{
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+    background-color: var(--secondary-color-lighter);
+    color: white;
+
+    font-size: 2vw;
+}
+
+table th{
+    background-color: var(--secondary-color);
+}

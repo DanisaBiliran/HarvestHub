@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Farmer/viewProductSelling.css">
+    <title>View Product</title>
+</head>
+<body>
+    <br>
+    <a href="../FARMER/farmerUser.html"><img class="back" src="../icons/back.png" alt="back"></a>
+
+    <!-- PRODUCT -->
+    <div id="product-and-button">
+        <h1>Product</h1>
+        <a href="../FARMER/updateProductSelling.html"><button class="update-button">Update</button></a>
+    </div>
+
+    <div id="product-info-container">
+        <p><b>Product Name:</b> Product1</p>
+        <p><b>Category:</b> Dairy Products</p>
+        <p><b>Measurement Unit:</b> Piece</p>
+        <p><b>Price per Piece</b> 10.00</p>
+        <p><b>Stocks Available:</b> 100 pieces</p>
+    </div>
+    <br><br><br>
+
+    <!-- ORDERS -->
+    <div id="product-and-button"><h1>Orders</h1></div>
+    <div id="orders-container">
+        <!-- NAVIGATIONS -->
+        <div>
+            <a href="">Sold</a>
+            <a href="">Cancelled</a>
+        </div>
+
+        <!-- SOLD -->
+        <table id="orders-sold">
+            <!-- HEADERS -->
+            <tr>
+                <th>Date Ordered</th>
+                <th>Date Delivered</th>
+                <th>Customer</th>
+                <th>Cust. Barangay</th>
+                <th>Product Qnty</th>
+                <th>Cost</th>
+                <th>Selling Type</th>
+                <th>Delivery Cost</th>
+                <th>Total Cost</th>
+            </tr>
+
+
+            <!-- EACH ORDER -->
+             <!-- data below are only entered to provide examples -->
+            <tr>
+                <td>1/1/2024</td> <!-- Date Ordered -->
+                <td>1/2/2024</td> <!-- Date Ordered -->
+                <td>Eric Kapitan</td> <!-- Customer -->
+                <td>Ayala</td> <!-- Cust. Barangay -->
+                <td>10</td> <!-- Product Qnty -->
+                <td>100.00</td> <!-- Cost -->
+                <td>Delivery</td> <!-- Selling Type -->
+                <td>20.00</td> <!-- Delivery Cost -->
+                <td>120.00</td> <!-- Total Cost -->
+            </tr>
+
+            <!-- another set of data for examples purposes -->
+            <tr>
+                <td>2/10/2024</td> <!-- Date Ordered -->
+                <td>2/12/2024</td> <!-- Date Ordered -->
+                <td>Danisa Biliran</td> <!-- Customer -->
+                <td>Pamcutan</td> <!-- Cust. Barangay -->
+                <td>10</td> <!-- Product Qnty -->
+                <td>100.00</td> <!-- Cost -->
+                <td>Pickup</td> <!-- Selling Type -->
+                <td>0.00</td> <!-- Delivery Cost -->
+                <td>100.00</td> <!-- Total Cost -->
+            </tr>
+        </table>
+
+        <br><br>
+
+        <!-- CANCELLED -->
+        <table id="orders-cancelled">
+            <!-- HEADERS -->
+            <tr>
+                <th>Date Ordered</th>
+                <th>Customer</th>
+                <th>Cust. Barangay</th>
+                <th>Product Qnty</th>
+                <th>Cost</th>
+                <th>Selling Type</th>
+                <th>Delivery Cost</th>
+                <th>Total Cost</th>
+                <th>Cancelation Reason</th>
+            </tr>
+
+
+            <!-- EACH ORDER -->
+             <!-- data below are only entered to provide examples -->
+            <tr>
+                <td>1/1/2024</td> <!-- Date Ordered -->
+                <td>Eric Kapitan</td> <!-- Customer -->
+                <td>Ayala</td> <!-- Cust. Barangay -->
+                <td>10</td> <!-- Product Qnty -->
+                <td>100.00</td> <!-- Cost -->
+                <td>Delivery</td> <!-- Selling Type -->
+                <td>20.00</td> <!-- Delivery Cost -->
+                <td>120.00</td> <!-- Total Cost -->
+                <td>trip lang</td> <!-- Cancelation Reason -->
+            </tr>
+
+            <!-- another set of data for examples purposes -->
+            <tr>
+                <td>2/10/2024</td> <!-- Date Ordered -->
+                <td>Danisa Biliran</td> <!-- Customer -->
+                <td>Pamcutan</td> <!-- Cust. Barangay -->
+                <td>10</td> <!-- Product Qnty -->
+                <td>100.00</td> <!-- Cost -->
+                <td>Pickup</td> <!-- Selling Type -->
+                <td>0.00</td> <!-- Delivery Cost -->
+                <td>100.00</td> <!-- Total Cost -->
+                <td>mistake in ordering</td> <!-- Cancelation Reason -->
+            </tr>
+        </table>
+    </div>
+
+    
+</body>
+</html>

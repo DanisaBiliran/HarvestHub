@@ -11,25 +11,37 @@ h1{
 
 form{
     background-color: var(--secondary-color);
+    box-shadow: 10px 10px 8px rgb(60, 59, 59);
     color: white;
-    width: 80%;
-
+    width: 60%;
     border-radius: 10px;
     margin: auto;
     padding: 20px;
 
-    font-size: large;
+    font-size: 2vw;
+}
+
+table{
+    width: 100%;
+    border-spacing: 10px;
 }
 
 input{
-    font-size: large;
-    width: 95%;
+    font-size: 2vw;
+    width: 98%;
 }
-
 select{
-    font-size: large;
+    font-size: 2vw;
+    width: 100%;
 }
 
-#price, #stocks-available{
-    width: auto;
+.submit-button-container{
+    text-align: center;
 }
+
+.update-button{
+    width: auto;
+    padding: 5px;
+    border-radius: 8px;
+}
+

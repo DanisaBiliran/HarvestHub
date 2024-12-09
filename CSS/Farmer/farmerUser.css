@@ -84,7 +84,7 @@ h1{
 /* NAVIGATION */
 #navigation {
     background-color: white;
-    width: 80%;
+    width: 90%;
     border: 1px solid black;
     margin: auto; 
     margin-top: 15px;
@@ -115,13 +115,14 @@ h1{
 #info-container{
     background-color: var(--secondary-color);
     color: white;
-    width: 80%;
+    width: 90%;
     border: 1px solid black;
     margin: auto; 
 
     padding: 10px;
 }
 
+/* ============================ */
 /* RATINGS */
 /* div of each rating */
 #each-rating{
@@ -150,6 +151,7 @@ h1{
     margin: 0;
 }
 
+/* ============================ */
 /* PRODUCT SELLING */
 #product-selling{
     width: 100%;
@@ -195,4 +197,26 @@ h1{
     width: 100%;
     font-size: 2.1vw;
     margin: 0.5vh 0;
+}
+
+/* ============================ */
+/* ORDERS */
+#orders-table{
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+    background-color: var(--secondary-color-lighter);
+    color: white;
+
+    font-size: 2vw;
+}
+
+#orders-table th{
+    background-color: var(--secondary-color);
+}
+
+#action-cell{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
 }
