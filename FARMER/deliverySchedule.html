@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Farmer/orderSatus.css">
+    
+    <title>Delivery Status</title>
+</head>
+<body>
+    <br>
+    <a href="ordersView.html"><img class="back" src="../icons/back.png" alt="back"></a>
+    <br>
+
+    <div id="title">
+        <h1>Delivery Schedule</h1>
+        <p>Select a convenient date and time for your delivery.</p>
+    </div>
+    <br>
+
+    <form action="">
+        <div id="date-time">
+            <div>
+                <label for="delivery-date">Date</label>
+                <input type="date" name="delivery-date" id="delivery-date" required>
+            </div>
+    
+            <div>
+                <label for="delivery-time">Time</label>
+                <input type="time" name="delivery-time" id="delivery-time" required>
+            </div>
+        </div>
+        <br>
+        <input class="update-button" type="submit" value="Schedule Delivery">
+    </form>
+</body>
+</html>

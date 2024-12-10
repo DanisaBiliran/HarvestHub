@@ -1,0 +1,49 @@
+@import "../root.css";
+@import "../buttons.css";
+
+body{
+    background-color: var(--primary-color);
+}
+
+/* "title" and Button */
+#title-and-button{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+#title-and-button h1{
+    margin: 0;
+}
+
+/* PRODUCT INFOS */
+#product-info-container{
+    width:86%;
+    margin: auto;
+    box-shadow: 10px 10px 15px grey;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+#product-info-container p{
+    margin: 4px;
+}
+
+/* TABLE INFOS */
+table{
+    width: 90%;
+    margin: auto;
+    background-color: var(--secondary-color-lighter);
+    color: white;
+
+    font-size: 2vw
+}
+
+table th{
+    background-color: var(--secondary-color);
+}

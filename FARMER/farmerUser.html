@@ -36,15 +36,15 @@
 
     <div id="info-container">
         <!-- GENERAL INFORMATION -->
-        <!-- <div id="general-info">
-            <p>Address: </p> street, barangay, city
+        <div id="general-info">
+            <p>Address: </p> <!-- street, barangay, city -->
             <p>Email: </p>
             <p>Phone: </p>
-        </div> -->
+        </div>
 
         <!-- RATINGS -->
-        <!-- <div id="ratings">
-            <p>Ratings: </p> average number of stars
+        <div id="ratings">
+            <p>Ratings: </p> <!-- average number of stars -->
             <br>
             <div id="each-rating">
                 <div id="profile-pic-container">
@@ -57,10 +57,10 @@
                     <p>Commented: </p>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- PRODUCTS SELLING -->
-        <!-- <table id="products-selling">
+        <table id="products-selling">
             <tr>
                 <td class="add-button" colspan="3" style="border: none;">
                     <a href="../FARMER/add-product-selling.html"><button>+</button></a>
@@ -83,7 +83,7 @@
                     <a href=""><button class="delete-button" >delete</button></a>
                 </td>
             </tr>
-        </table> -->
+        </table>
 
         <!-- ORDERS -->
         <table id="orders-table">
@@ -107,16 +107,56 @@
                 <td>Pickup</td> <!-- Selling Type -->
                 
                 <!-- Actions -->
-                <td>
-                    <a href=""><button class="view-button">view</button></a>
+                <td id="action-cell">
+                    <a href="ordersView.html"><button class="view-button">view</button></a>
+                    <button class="update-button">accept</button>
+                    <button class="delete-button">deny</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>42846</td> <!-- Order ID -->
+                <td>1/10/2024</td> <!-- Date -->
+                <td>Asiong Tee</td> <!-- Customer -->
+                <td>Ayala</td> <!-- Cust. Barangay -->
+                <td>200.00</td> <!-- Cost (products) -->
+                <td>Delivery</td> <!-- Selling Type -->
+                
+                <!-- Actions -->
+                <td id="action-cell">
+                    <a href="ordersView.html"><button class="view-button">view</button></a>
                     <button class="update-button">accept</button>
                     <button class="delete-button">deny</button>
                 </td>
             </tr>
         </table>
-
         <br>
 
+        <!-- SALES -->
+        <table id="sales-table">
+            <tr>
+                <th>Order ID</th>
+                <th>Date Sold</th>
+                <th>Customer</th>
+                <th>Selling Type</th>
+                <th>Total Cost</th>
+                <th>Actions</th>
+            </tr>
+
+            <!-- examples -->
+            <tr>
+                <td>12345</td> <!-- Order ID -->
+                <td>1/1/2024</td> <!-- Date Sold -->
+                <td>Username</td> <!-- Customer -->
+                <td>Delivery</td> <!-- Selling Type -->
+                <td>120.00</td> <!-- Total Cost -->
+                
+                <!-- Actions -->
+                <td id="action-cell">
+                <button class="view-button">view</button>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <br>

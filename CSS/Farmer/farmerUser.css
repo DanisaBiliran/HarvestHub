@@ -201,7 +201,7 @@ h1{
 
 /* ============================ */
 /* ORDERS */
-#orders-table{
+#orders-table, #sales-table{
     width: 100%;
     object-fit: cover;
     border: 1px solid black;
@@ -210,13 +210,59 @@ h1{
 
     font-size: 2vw;
 }
-
-#orders-table th{
+/* header */
+#orders-table th, #sales-table th{
     background-color: var(--secondary-color);
 }
-
-#action-cell{
+/* white line between orders */
+#orders-table tr td, #sales-table tr td{
+    border-top: 1px solid white;
+}
+/* cells container action buttons */
+#orders-table tr #action-cell{
     width: 10%;
+    display: flexbox;
+    flex-direction: column;
+}
+/* action buttons */
+.view-button, .update-button, .delete-button{
+    width: 100%;
+    margin: 2px;
+    font-size: 2vw;
+}
+
+/* ============================== */
+/* CONSUMER */
+#consumerButtonContainer{
+    width: 80%;
+    height: 5vh;
+    margin: auto;
+    text-align: center;
+
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+}
+
+ /* ICONBUTTONS */
+ #consumerButtonContainer img{
+    width: 100%;
+    height: 100%;
+}
+
+/* BUTTONS */
+#consumerButtonContainer button{
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#consumerButtonContainer a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#consumerButtonContainer button:hover, #consumerButtonContainer a:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 4px 11px white;
 }

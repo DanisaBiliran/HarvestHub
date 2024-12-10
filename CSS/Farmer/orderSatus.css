@@ -1,0 +1,42 @@
+/* ORDER STATUS and DELIVERY SCHEDULE */
+
+@import "../root.css";
+@import "../buttons.css";
+
+body{
+    background-color: var(--primary-color);
+}
+
+select{
+    font-size: large;
+}
+
+/* DELIVERY STATUS */
+#title{
+    /* border: 1px solid black; */
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#title h1, #title p{
+    margin: 0;
+}
+
+form{
+    border: 1px solid black;
+    padding: 40px;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+#date-time{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.update-button{
+    padding: 5px;
+}
