@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/Farmer/farmerHeader.css">
     <link rel="stylesheet" href="../CSS/footer.css">
-    <link rel="stylesheet" href="../CSS/Farmer/farmerUser.css">
+    <link rel="stylesheet" href="../CSS/Consumer/consumerUser.css">
     <title>Consumer</title>
 </head>
 <body>
@@ -29,10 +29,8 @@
     <!-- NAVIGATION -->
     <div id="navigation">
         <h2><a href="#" class="nav-link active" data-target='GenInformation'>General Information</a></h2>
-        <h2><a href="#" class="nav-link" data-target='ratings'>Ratings</a></h2>
-        <h2><a href="#" class="nav-link" data-target='productsSelling'>Products Selling</a></h2>
         <h2><a href="#" class="nav-link" data-target='orders'>Orders</a></h2>
-        <h2><a href="#" class="nav-link" data-target='sales'>Sales</a></h2>
+        <h2><a href="#" class="nav-link" data-target='purchaseHistory'>Purchase History</a></h2>
     </div>
 
     <div id="info-container">
@@ -42,6 +40,65 @@
             <p>Email: </p>
             <p>Phone: </p>
         </div> -->
+
+        <!-- ORDERS -->
+        <table id="orders-table">
+            <tr>
+                <th colspan="2">Product</th>
+                <th>Price each</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+
+            <!-- examples -->
+            <tr>
+                 <!-- picture and name -->
+                <td id="product-pic-container">
+                    <img src="../pictures/egg.png" alt="">
+                </td>
+
+                <td><p>Product1</p></td> <!-- Product Name -->
+                <td>5.00</td> <!-- Price each -->
+                <td>4</td> <!-- Quantity -->
+                <td>20.00</td> <!-- Total Price -->
+                
+                <!-- Actions -->
+                <td id="action-cell">
+                    <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
+                    <button class="delete-button">cancel</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <!-- PURCHASE HISTORY -->
+         <table id="purchase-history-table">
+            <tr>
+                <th>OrderID</th>
+                <th>Date Recieved</th>
+                <th>Seller</th>
+                <th>Selling Type</th>
+                <th>Total Cost</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>12345</td>
+                <td>1/2/2024</td>
+                <td>Juan Tamad</td>
+                <td>Delivery</td>
+                <td>120.00</td>
+                
+                <td id="action-cell">
+                    <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
+                </td>
+            </tr>
+         </table>
     </div>
+
+    <div id="footer"></div>
+    <!-- JS FOR LOADING HEADER AND FOOTER -->
+    <script src="../JS/Farmer/farmerHeaderFooter.js"></script>
 </body>
 </html>

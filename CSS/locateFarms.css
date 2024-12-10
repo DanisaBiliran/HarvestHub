@@ -1,0 +1,61 @@
+@import "../CSS/root.css";
+@import "../CSS/buttons.css";
+
+body{
+    background-color: var(--primary-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+main{
+    flex: 1;
+}
+
+/* SEARCH FIELD: */
+/* where both SEARCHFIELD AND BAR ARE CONTAINED */
+#search-container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 40px;
+    margin: auto;
+}
+
+/* FOR THE INPUT FIELD */
+#search-container #input-field{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px 0 0 6px;
+    object-fit: cover;
+}
+
+/* SEARCH BAR */
+.search-button img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.search-button{
+    height: 100%;
+    border-radius: 0 6px 6px 0;
+    background-color: var(--secondary-color);
+    object-fit: cover;
+}
+
+.search-button:hover {
+    background-color: #031716;
+}
+
+
+/* WHITE CONTAINER BELOW */
+#nearest-farms-content{
+    width: 80%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid grey;
+}
+

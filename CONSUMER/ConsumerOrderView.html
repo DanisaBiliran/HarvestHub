@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Consumer/ConsumerOrderView.css">
+    <title>View Order</title>
+</head>
+<body>
+    <br>
+    <a href="consumerUser.html"><img class="back" src="../icons/back.png" alt="back"></a>
+    <br>
+
+    <!-- ORDER INFORMATION -->
+    <div id="title-and-button">
+        <h1>Order Information</h1>
+        <a href="consumerOrderStatus.html"><button class="view-button">order status</button></a>
+    </div>
+
+    <div id="product-info-container">
+        <p><b>Order ID:</b> 12456</p>
+        <p><b>Cost of Products:</b> 100.00</p>
+        <p><b>Delivery Cost:</b> 20.00</p>
+        <p><b>Total Cost:</b> 120.00</p>
+    </div>
+    <br><br>
+
+    <!-- PRODUCTS -->
+    <div id="title-and-button">
+        <h1>Products</h1>
+    </div>
+
+    <table>
+        <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>Measurement Unit</th>
+            <th>Quantity</th>
+            <th>Total Cost per Product</th>
+        </tr>
+
+        <!-- examples (1 table row per product) -->
+        <tr>
+            <td>mango</td> <!-- Products -->
+            <td>5.00</td> <!-- Price -->
+            <td>pieces</td> <!-- Measurement Unit -->
+            <td>4</td> <!-- Quantity -->
+            <td>20.00</td> <!-- Total Cost per Product -->
+        </tr>
+
+        <tr>
+            <td>egg</td> <!-- Products -->
+            <td>6.00</td> <!-- Price -->
+            <td>pieces</td> <!-- Measurement Unit -->
+            <td>5</td> <!-- Quantity -->
+            <td>30.00</td> <!-- Total Cost per Product -->
+        </tr>
+
+        <!-- for the total cost of products -->
+        <tr>
+            <td>
+                <p>
+                    <b style="color: var(--cta);">Total Cost of Products:</b> 
+                    50.00
+                </p>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <!-- SELLER INFORMATION -->
+    <div id="title-and-button">
+        <h1>Seller Information</h1>
+    </div>
+
+    <div id="product-info-container">
+        <p><b>Username:</b> farmer1</p>
+        <p><b>Email:</b> username@gmail.com</p>
+        <p><b>Phone:</b> 09123456789</p>
+    </div>
+    <br><br>
+    
+    <!-- DELIVERY INFORMATION -->
+    <div id="title-and-button">
+        <h1>Delivery Information</h1>
+    </div>
+
+    <div id="product-info-container">
+        <p><b>Location:</b> Street, Barangay, Zamboanga City</p>
+        <p><b>Date:</b> username@gmail.com</p>
+        <p><b>Time:</b> 09123456789</p>
+    </div>
+    <br><br>
+</body>
+</html>
