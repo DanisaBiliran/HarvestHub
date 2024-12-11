@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/Consumer/consumerUser.css">
     <title>Consumer</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        /* Style for active navigation links */
+        #navigation .nav-link.active {
+            text-decoration: underline; /* Underline for active nav link */
+            font-weight: bold; /* Optional: make it bold */
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
@@ -20,9 +31,9 @@
     <h1>Username</h1>
 
     <div id="consumerButtonContainer">
-        <button id="consumer-edit-button" ><img src="../icons/editWhite.png" alt="edit"></button>
+        <button id="consumer-edit-button"><img src="../icons/editWhite.png" alt="edit"></button>
         <a id="customer-cart-button" href=""><img src="../icons/cart-green.png" alt="cart"></a>
-        <a id="consumer-chat-button" href=""><img src="../icons/message.png" alt="chats"></a>
+        <a id="consumer-chat-button" href="cart.html"><img src="../icons/message.png" alt="chats"></a>
         <button id="logout-button">Logout</button>
     </div>
 
@@ -35,70 +46,108 @@
 
     <div id="info-container">
         <!-- GENERAL INFORMATION -->
-        <!-- <div id="general-info">
-            <p>Address: </p> street, barangay, city
+        <div id="GenInformation">
+            <p>Address: </p> <!-- Address details -->
             <p>Email: </p>
             <p>Phone: </p>
-        </div> -->
+        </div>
 
         <!-- ORDERS -->
-        <table id="orders-table">
-            <tr>
-                <th colspan="2">Product</th>
-                <th>Price each</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Actions</th>
-            </tr>
+        <div id="orders" class="hidden">
+            <table id="orders-table">
+                <tr>
+                    <th colspan="2">Product</th>
+                    <th>Price each</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Actions</th>
+                </tr>
 
-            <!-- examples -->
-            <tr>
-                 <!-- picture and name -->
-                <td id="product-pic-container">
-                    <img src="../pictures/egg.png" alt="">
-                </td>
+                <!-- examples -->
+                <tr>
+                    <!-- picture and name -->
+                    <td id="product-pic-container">
+                        <img src="../pictures/egg.png" alt="">
+                    </td>
 
-                <td><p>Product1</p></td> <!-- Product Name -->
-                <td>5.00</td> <!-- Price each -->
-                <td>4</td> <!-- Quantity -->
-                <td>20.00</td> <!-- Total Price -->
-                
-                <!-- Actions -->
-                <td id="action-cell">
-                    <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
-                    <button class="delete-button">cancel</button>
-                </td>
-            </tr>
-        </table>
-        <br>
+                    <td><p>Product1</p></td> <!-- Product Name -->
+                    <td>5.00</td> <!-- Price each -->
+                    <td>4</td> <!-- Quantity -->
+                    <td>20.00</td> <!-- Total Price -->
+
+                    <!-- Actions -->
+                    <td id="action-cell">
+                        <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
+                        <button class="delete-button">cancel</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </div>
 
         <!-- PURCHASE HISTORY -->
-         <table id="purchase-history-table">
-            <tr>
-                <th>OrderID</th>
-                <th>Date Recieved</th>
-                <th>Seller</th>
-                <th>Selling Type</th>
-                <th>Total Cost</th>
-                <th>Action</th>
-            </tr>
+        <div id="purchaseHistory" class="hidden">
+            <table id="purchase-history-table">
+                <tr>
+                    <th>OrderID</th>
+                    <th>Date Received</th>
+                    <th>Seller</th>
+                    <th>Selling Type</th>
+                    <th>Total Cost</th>
+                    <th>Action</th>
+                </tr>
 
-            <tr>
-                <td>12345</td>
-                <td>1/2/2024</td>
-                <td>Juan Tamad</td>
-                <td>Delivery</td>
-                <td>120.00</td>
-                
-                <td id="action-cell">
-                    <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
-                </td>
-            </tr>
-         </table>
+                <!-- examples -->
+                <tr>
+                    <td>12345</td>
+                    <td>1/2/2024</td>
+                    <td>Juan Tamad</td>
+                    <td>Delivery</td>
+                    <td>120.00</td>
+
+                    <!-- Actions -->
+                    <td id="action-cell">
+                        <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
     </div>
+    <br>
 
+    <!-- Footer Placeholder -->
     <div id="footer"></div>
+
     <!-- JS FOR LOADING HEADER AND FOOTER -->
     <script src="../JS/Farmer/farmerHeaderFooter.js"></script>
+
+    <!-- JavaScript for Navigation Functionality -->
+    <script type='text/javascript'>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default anchor behavior
+
+                // Hide all sections
+                document.querySelectorAll('#info-container > div').forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Show the selected section
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+
+                // Remove 'active' class from all links and add it to the clicked link
+                document.querySelectorAll('.nav-link').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Trigger click on the first nav link to show its content by default
+        document.querySelector('.nav-link.active').click();
+    </script>
+
 </body>
 </html>

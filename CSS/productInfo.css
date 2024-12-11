@@ -1,0 +1,55 @@
+@import "../CSS/root.css";
+@import "../CSS/buttons.css";
+
+body{
+    background-color: var(--primary-color);
+}
+
+#container{
+    width: 90%;
+    margin: auto;
+    box-shadow: 5px 5px 15px grey;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    font-size: 2.5vw;
+}
+
+table tr, table td{
+    border: 1px solid black;
+}
+
+/* cell with image and button */
+table tr #image-name{
+    width: 60%;
+}
+
+table img{
+    width: 100%;
+    object-fit: cover;
+}
+
+#name-and-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+#name-and-button button{
+    border: none;
+    background-color: transparent;
+    color: var(--cta);
+}
+
+/* cell of infos */
+#infos{
+    vertical-align: text-top;
+}
+
+#infos p{
+    margin: 5px;
+}
+
+#infos input{
+    width: 50%;
+    font-size: 2.5vw;
+}

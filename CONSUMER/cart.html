@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Consumer/cart.css">
+    <title>Cart</title>
+</head>
+<body>
+    <br>
+    <a onclick="history.back()"><img class="back" src="../icons/back.png" alt="back"></a>
+    <br>
+
+    <h1>Shopping Cart</h1>
+
+    <table>
+        <tr id="titles">
+            <td><b>Cart</b></td>
+            <td><b>Order Summary</b></td>
+        </tr>
+
+        <tr>
+            <!-- CART CELL -->
+            <td id="products">
+                <div id="each-product">
+                    <b>SellerName</b>
+                    <!-- 1 table per product -->
+                    <table>
+                        <tr id="headers">
+                            <td id="product-info">Product</td>
+                            <td>Qnty</td>
+                            <td>Total</td>
+                            <td id="action-button-cell">Action</td>
+                        </tr>
+
+                        <tr id="product-list">
+                            <!-- pic,name,price -->
+                            <td id="pic-container">
+                                <img src="../pictures/egg.png" alt="">
+                                <div>
+                                    <p>ProductName</p>
+                                    <p>5.00</p>
+                                </div>
+                            </td>
+
+                            <td>4</td> <!-- quantity -->
+                            <td>20.00</td> <!-- total -->
+
+                            <!-- action button -->
+                            <td><button class="delete-button">remove</button></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr id="headers">
+                            <td id="product-info">Product</td>
+                            <td>Qnty</td>
+                            <td>Total</td>
+                            <td id="action-button-cell">Action</td>
+                        </tr>
+
+                        <tr id="product-list">
+                            <!-- pic,name,price -->
+                            <td id="pic-container">
+                                <img src="../pictures/egg.png" alt="">
+                                <div>
+                                    <p>ProductName</p>
+                                    <p>5.00</p>
+                                </div>
+                            </td>
+
+                            <td>4</td> <!-- quantity -->
+                            <td>20.00</td> <!-- total -->
+
+                            <!-- action button -->
+                            <td><button class="delete-button">remove</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <!-- CART CELL -->
+
+            <!-- ORDER SUMMARY CELL -->
+            <td id="order-summary">
+                <b class="centered">SellerName</b>
+                <p id="headers">Products</p>
+                <table>
+                    <tr id="headers">
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Amount</td>
+                        <td>Total</td>
+                    </tr>
+
+                    <!-- data examples -->
+                    <tr>
+                        <td>Product1</td> <!-- product name -->
+                        <td>5.00</td> <!-- price -->
+                        <td>4</td> <!-- quantity -->
+                        <td>20.00</td> <!-- total -->
+                    </tr>
+
+                    <tr>
+                        <td>Product1</td>
+                        <td>5.00</td>
+                        <td>4</td>
+                        <td>20.00</td>
+                    </tr>
+                </table>
+                <br>
+
+                <!-- TOTAL COST OF PRODUCTS -->
+                <p><b id="headers">Total Cost of Products:</b> 40.00</p>
+                
+                <!-- DELIVERY COST -->
+                <p><b id="headers">Delivery Cost:</b> 10.00</p>
+                
+                <!-- OVERALL COST -->
+                <p><b id="headers">Overall Cost:</b> 50.00</p>
+
+                <button class="view-button">Checkout</button>
+                <br><br>
+            </td>
+            <!-- ORDER SUMMARY CELL -->
+        </tr>
+    </table>
+</body>
+</html>

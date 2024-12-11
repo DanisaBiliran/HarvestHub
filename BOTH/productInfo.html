@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/productInfo.css">
+    <title>Product</title>
+</head>
+<body>
+    <br>
+    <a onclick="history.back()"><img class="back" src="../icons/back.png" alt="back"></a>
+    <br><br>
+
+    <div id="container">
+        <table>
+            <tr>
+                <td id="image-name">
+                    <img src="../pictures/egg.png" alt="">
+                    <div id="name-and-button">
+                        <b>ProductName</b>
+                        <button>see all pictures ></button>
+                    </div>
+                </td>
+
+                <td id="infos">
+                    <p><b>Seller:</b> Product Name</p>
+                    <p><b>Measurement Unit:</b> </p>
+                    <p><b>Price:</b> </p>
+
+                    <br>
+                    <input type="number" name="stocks-available" id="stocks-available" min="0" placeholder="Quantity" required>
+                    <br>
+                    <button class="update-button">add to cart</button>
+                    <button class="view-button">checkout</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

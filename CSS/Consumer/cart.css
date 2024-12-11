@@ -1,0 +1,64 @@
+@import "../root.css";
+@import "../buttons.css";
+
+body{
+    background-color: var(--primary-color);
+}
+
+table{
+    width: 90%;
+    margin: auto;
+    font-size: 2vw;
+}
+
+/* table td, table tr{
+    border: 1px solid black;
+} */
+
+/* PRODUCT CELL */
+#products{
+    width: 60%;
+    background-color: white;
+    color: black;
+    vertical-align: top;
+}
+
+/* table containing each product */
+#each-product table{
+    width: 100%;
+    border: 1px solid black;
+}
+
+/* headers */
+#headers{
+    color: grey;
+}
+
+#action-button-cell{
+    width: 10%;
+}
+/* cells of pic */
+#headers #product-info{
+    width: 40%;
+}
+
+#product-list #pic-container{
+    display: flex;
+}
+
+#product-list img{
+    width: 40%;
+    object-fit: cover;
+}
+
+
+/* ORDER SUMMARY CELL */
+#order-summary{
+    background-color: var(--secondary-color);
+    color: white;
+    vertical-align: top;
+}
+
+.centered{
+    text-align: center;
+}

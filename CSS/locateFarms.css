@@ -15,36 +15,34 @@ main{
 /* SEARCH FIELD: */
 /* where both SEARCHFIELD AND BAR ARE CONTAINED */
 #search-container{
-    display: flex;
-    justify-content: center;
+    border: 1px solid black;
     width: 80%;
-    height: 40px;
+    height: 5vh;
     margin: auto;
+    display: flex;
+
+    border-radius: 0 5px 5px 0;
+    border: none;
 }
 
 /* FOR THE INPUT FIELD */
-#search-container #input-field{
-    width: 100%;
-    height: 100%;
-    border-radius: 6px 0 0 6px;
-    object-fit: cover;
+#search-container input{
+    width: 90%;
+    font-size: 2vw;
 }
 
 /* SEARCH BAR */
-.search-button img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.search-button{
-    height: 100%;
-    border-radius: 0 6px 6px 0;
+#search-container button{
     background-color: var(--secondary-color);
-    object-fit: cover;
-}
+    color: white;
+    width: 10%;
+    border-radius: 0 5px 5px 0;
 
-.search-button:hover {
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 0;
+}
+#search-container button {
     background-color: #031716;
 }
 
