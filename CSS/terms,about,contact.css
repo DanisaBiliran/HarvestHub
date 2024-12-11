@@ -1,0 +1,71 @@
+@import "root.css";
+body{
+    background-color: #004643;
+    padding: 0%;
+    margin: 0;
+    color: white;
+}
+
+.table-about-us{
+    margin: 10%;
+    color: white;
+    width: 80%;
+    height:auto;
+}
+
+/* .table-about-us tr, .table-about-us td{
+    border: 1px solid white;
+} */
+
+/* CELL (above) CONTAINING LOGO */
+.with-logo{
+    text-align: center;
+}
+
+/* for spacing */
+.mission-content-texts{
+    padding-right: 10px;
+}
+
+/* divide mision and vision cells equally */
+.mission-text, .vision{
+    width: 50%;
+}
+
+
+.browse-harvesthub{
+    background-color: #F9BC60;
+    color: black;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+pre{
+    color: white;
+}
+
+#terms-conditions{
+    margin: 10%;
+    color: white;
+    width: 80%;
+    height:auto;
+}
+
+#terms-conditions a {
+    color: blue;
+}
+
+#terms-conditions a:visited{
+    color: rgb(143, 143, 8) ;
+
+}
+
+
+/* PRIVACY POLICY */
+#privacy-policy-container{
+    padding: 20px;
+}
+
+#privacy-policy-container h2{
+    text-align: center;
+}
