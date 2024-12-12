@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/chat.css">
+    <link rel="stylesheet" href="../CSS/Farmer/farmerHeader.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="CSS/signin-login.css">
+    <title>Chats</title>
+    
+</head>
+<body>
+
+    <br>
+    <a onclick="history.back()"><img class="back" src="../icons/back.png" alt="back"></a>
+    <br>
+
+<!-- encloses the whole container for chats -->
+<div class="chat-app">
+    <div class="send-message">
+        <h2>Create New Message</h2>
+        <form id="message-form" onsubmit="sendMessage(event)">
+            <input type="text" id="recipient" placeholder="Recipient" required />
+            <textarea id="message" placeholder="Type your message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <div class="chat-content">
+        <div class="inbox" id="inbox">
+            <h2>Inbox</h2>
+            <!-- message list will be shown here -->
+        </div>
+
+        <!-- opened message or convo -->
+        <div class="message-display" id="message-display">
+             <!-- This section will dynamically update based on selected conversation -->
+             <!-- Message History Section -->
+             <div class="message-history" id="message-history" style="display:none;">
+                <!-- Messages or your convo history will be shown here -->
+             </div>
+
+             <!-- Reply Section -->
+             <div class="reply-section" style="display:none;" id="reply-section">
+                <textarea id="reply-message" placeholder="Type your reply here..."></textarea><br />
+                <button onclick="sendReply()">Reply</button>
+             </div>
+
+             <!-- default content when no conversation is selected -->
+             <div id="default-message-content">
+                 <h2>Message</h2>
+                 <div class="message-content">
+                     <p>Select a message to read.</p>
+                 </div>
+             </div>
+
+         </div>
+    </div>
+</div>
+
+<script>
+// store messages in an object
+let conversations = {};
+let currentRecipient = '';
+
+function openMessage(recipient) {
+    const message = conversations[recipient];
+    const messageDisplay = document.getElementById('message-display');
+    
+    if (message) {
+        // update message display area with the selected message
+        document.getElementById('default-message-content').style.display = 'none'; // hide default content
+       
+         // show the selected conversation's history
+         const messageHistory = document.getElementById('message-history');
+         messageHistory.innerHTML = `
+             <h2>${message.from}</h2>
+             ${message.history.map(msg => `<p><strong>${msg.sender}:</strong> ${msg.content} <span class='time'>(${msg.time})</span></p>`).join('')}
+         `;
+         messageHistory.style.display = 'block'; // Show message history
+
+         // show reply section and set current recipient
+         document.getElementById('reply-section').style.display = 'block';
+         currentRecipient = recipient; // set recipient based on the selected message
+     } else {
+         // reset if no messages are found
+         document.getElementById('default-message-content').style.display = 'block'; // show default content
+     }
+}
+
+function sendMessage(event) {
+    event.preventDefault();
+    
+    const recipient = document.getElementById('recipient').value.trim();
+    const messageContent = document.getElementById('message').value.trim();
+
+    // create a new conversation if it doesn't exist
+    if (!conversations[recipient]) {
+      conversations[recipient] = { 
+          from: recipient, 
+          history: [] 
+      };
+      addToInbox(recipient);
+    }
+
+    const timeStamp = new Date().toLocaleString([], { hour12: true, hour: 'numeric', minute:'numeric' });
+    
+    // add sent message to conversation history
+    conversations[recipient].history.push({ sender: 'You', content: messageContent, time: timeStamp });
+
+    alert(`Message sent to ${recipient}: ${messageContent}`);
+
+    // clear the form
+    document.getElementById('recipient').value = '';
+    document.getElementById('message').value = '';
+
+    // update the inbox with the new message
+    updateInbox(recipient, messageContent, timeStamp);
+}
+
+function sendReply(recipient) {
+    const replyMessage = document.getElementById('reply-message').value.trim();
+
+    if (currentRecipient && replyMessage) {
+        
+       // add reply to conversation history
+       const timeStamp = new Date().toLocaleString([], { hour12: true, hour: 'numeric', minute:'numeric' });
+       conversations[currentRecipient].history.push({ sender: 'You', content: replyMessage, time: timeStamp });
+       
+       // update the message display with new history
+       openMessage(currentRecipient);
+       
+       alert(`Reply sent to ${currentRecipient}: ${replyMessage}`);
+       
+       // clear reply textarea
+       document.getElementById('reply-message').value = '';
+       
+       // update inbox with the new reply
+       updateInbox(currentRecipient, replyMessage, timeStamp);
+       
+    } else {
+       alert("Please select a message to reply to.");
+    }
+}
+
+function addToInbox(recipient) {
+   const inbox = document.getElementById('inbox');
+   const newMessagePreview = document.createElement('div');
+   newMessagePreview.className = 'message-preview';
+   newMessagePreview.onclick = () => openMessage(recipient);
+   
+   // extract only the first 10 characters from the last message content for preview
+   const lastMessageContent = conversations[recipient].history[0].content.substring(0, 10); 
+   
+   newMessagePreview.innerHTML = `
+       <div class='recipient-container'>
+           <strong>${recipient}</strong>
+           <button onclick="deleteConversation('${recipient}', event)">Del</button> <!-- Delete button -->
+       </div>
+       <p>${lastMessageContent}</p> <!-- Only show first ten characters of the last message -->
+       <span class='time'>${conversations[recipient].history[0].time}</span>
+   `;
+   inbox.appendChild(newMessagePreview);
+}
+
+function updateInbox(recipient, lastMessageContent, lastTimeStamp) {
+   const inboxItems = document.querySelectorAll('.message-preview');
+   let found = false;
+
+   inboxItems.forEach(item => {
+       if (item.querySelector('strong').textContent === recipient) {
+           // extract only the first 10 characters for updating preview
+           const previewContent = lastMessageContent.substring(0, 10); // get first 10 characters
+           item.querySelector('p').textContent = previewContent; // update last message content
+           item.querySelector('.time').textContent = lastTimeStamp; // update timestamp
+           found = true; // mark as found
+       }
+   });
+
+   // if not found in existing inbox items, add new one
+   if (!found) {
+      addToInbox(recipient);
+   }
+}
+
+// function to delete a conversation with confirmation
+function deleteConversation(recipient, event) {
+   event.stopPropagation(); // prevent opening the message when clicking delete
+
+   if (confirm(`Are you sure you want to delete this conversation with ${recipient}?`)) {
+       delete conversations[recipient]; // remove from conversations object
+
+       const inboxItems = document.querySelectorAll('.message-preview');
+       inboxItems.forEach(item => {
+           if (item.querySelector('strong').textContent === recipient) {
+               item.remove(); // remove from inbox display
+           }
+       });
+
+       // clear the message display if it was open
+       if (currentRecipient === recipient) {
+           currentRecipient = ''; // Reset current recipient
+           document.getElementById('default-message-content').style.display = 'block'; // show default content again
+           document.getElementById('message-history').style.display = 'none'; // hide message history section
+           document.getElementById('reply-section').style.display = 'none'; // hide reply section
+       }
+
+       alert(`Conversation with ${recipient} deleted.`);
+   }
+}
+</script>
+
+</body>
+</html> 

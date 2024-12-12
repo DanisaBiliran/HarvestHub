@@ -1,0 +1,110 @@
+@import "../CSS/root.css";
+@import "../CSS/buttons.css";
+
+body {
+    background-color: #ABD1C6;
+    color: white;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* encloses the whole container for chats */
+.chat-app {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 10%;
+    background: #004643;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 70px;
+    padding-bottom: 70px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* DIV CONTAINING THE create new message TEXT & FORM FOR CREATING NEW MESSAGES */
+.send-message {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    margin: 0 20px 10px 0;
+}
+
+/* FIELDS IN CREATING NEW MESSAGES FORM */
+#recipient, #message {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* buttons */
+button {
+    padding: 10px 15px;
+    background-color: #F9BC60;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #da880e;
+}
+
+
+/* div containing INBOX and Message (opened convo) */
+.chat-content {
+    display: flex; /*side-by-side*/
+}
+
+/* INBOX */
+.inbox {
+    width: 30%;
+    padding: 20px;
+    border-right: 1px solid #ccc; 
+}
+
+/* MESSAGE LIST IN INBOX */
+.message-preview {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #eee; 
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.message-preview:hover {
+    background-color: #025840a9; 
+}
+
+
+/* Recipient and delete button layout */
+.recipient-container {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-between; /* Space between recipient and delete button */
+    align-items: center; /* Center items vertically */
+}
+
+/* TIMESTAMP */
+.time {
+    font-size: 0.8em;
+    color: gray; 
+}
+
+/* OPENED MESSAGE */
+.message-display {
+    width: 70%; 
+    padding: 20px; 
+}
+.message-history {
+    margin-top: 20px;
+    border-top: 1px solid #ccc; 
+    padding-top: 10px;
+}
