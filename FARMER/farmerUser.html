@@ -49,6 +49,21 @@
     <!-- USERNAME -->
     <h1>Username</h1>
 
+    <!-- Rating -->
+    <div id="ratingStars">
+        <!-- Each star is a button -->
+        <button class="star" data-value="1">★</button>
+        <button class="star" data-value="2">★</button>
+        <button class="star" data-value="3">★</button>
+        <button class="star" data-value="4">★</button>
+        <button class="star" data-value="5">★</button>
+    </div>
+
+    <!-- Display selected rating -->
+    <div id="selectedRating"></div>
+    
+    <br><br>
+
     <div id="buttonContainer">
         <button id="edit-button"><img src="../icons/editWhite.png" alt="edit"></button>
         <a id="chat-button" href="../BOTH/chat.html"><img src="../icons/message.png" alt="chats"></a>
@@ -178,12 +193,15 @@
 
     </div>
 
-    <br>
+    <br><br><br><br><br><br>
     <!-- Footer Placeholder -->
     <div id="footer"></div>
 
     <!-- JS FOR LOADING HEADER AND FOOTER -->
     <script src="../JS/Farmer/farmerHeaderFooter.js"></script>
+
+    <!-- JS FOR RATING A FARMER -->
+    <script src="../JS/Farmer/ratingFarmer.js"></script>
 
     <!-- JavaScript for Navigation Functionality -->
     <script type='text/javascript'>
