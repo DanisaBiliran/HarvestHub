@@ -7,7 +7,7 @@ body{
 }
 
 .table-about-us{
-    margin: 10%;
+    margin: auto;
     color: white;
     width: 80%;
     height:auto;
@@ -29,7 +29,7 @@ body{
 
 /* divide mision and vision cells equally */
 .mission-text, .vision{
-    width: 50%;
+    width: 40%;
 }
 
 
@@ -51,11 +51,7 @@ pre{
     height:auto;
 }
 
-#terms-conditions a {
-    color: blue;
-}
-
-#terms-conditions a:visited{
+#terms-conditions a:visited, #privacy-policy-container a:visited{
     color: rgb(143, 143, 8) ;
 
 }
@@ -66,6 +62,7 @@ pre{
     padding: 20px;
 }
 
-#privacy-policy-container h2{
+#privacy-policy-container h1{
     text-align: center;
 }
+

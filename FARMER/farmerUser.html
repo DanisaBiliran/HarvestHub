@@ -18,6 +18,24 @@
             text-decoration: underline; /* Underline for active nav link */
             font-weight: bold; /* Optional: make it bold */
         }
+
+        
+        /* ENSURE FOOTER IS AT THE BOTTOM OF PAGE */
+        html, body {
+                    height: 100%;
+                    margin: 0;
+                }
+
+                body {
+                    position: relative;
+                }
+
+                #footer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
     </style>
 </head>
 <body>
@@ -122,7 +140,7 @@
 
                     <!-- Actions -->
                     <td id="action-cell">
-                        <a href=""><button class="view-button">view</button></a>
+                        <a href="../FARMER/ordersView.html"><button class="view-button">view</button></a>
                         <button class="update-button">accept</button>
                         <button class="delete-button">deny</button>
                     </td>

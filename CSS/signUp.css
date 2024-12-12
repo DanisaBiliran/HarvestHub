@@ -43,7 +43,7 @@ form div{
     padding: 10px 25px 10px 0;
 }
 
-input{
+input, select{
     font-size: large;
     width: 90%;
 }

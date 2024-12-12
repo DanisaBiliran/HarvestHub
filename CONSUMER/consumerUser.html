@@ -17,102 +17,122 @@
             text-decoration: underline; /* Underline for active nav link */
             font-weight: bold; /* Optional: make it bold */
         }
+
+        
+        /* ENSURE FOOTER IS AT THE BOTTOM OF PAGE */
+        html, body {
+                    height: 100%;
+                    margin: 0;
+                }
+
+                body {
+                    position: relative;
+                }
+
+                #footer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
     </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- PROFILE PICTURE -->
-    <div id="profilePicContainer">
-        <img src="../pictures/sustain-communities.jpg" alt="profile picture">
-    </div>
-
-    <!-- USERNAME -->
-    <h1>Username</h1>
-
-    <div id="consumerButtonContainer">
-        <button id="consumer-edit-button"><img src="../icons/editWhite.png" alt="edit"></button>
-        <a id="customer-cart-button" href="cart.html"><img src="../icons/cart-green.png" alt="cart"></a>
-        <a id="consumer-chat-button" href="../BOTH/chat.html"><img src="../icons/message.png" alt="chats"></a>
-        <button id="logout-button">Logout</button>
-    </div>
-
-    <!-- NAVIGATION -->
-    <div id="navigation">
-        <h2><a href="#" class="nav-link active" data-target='GenInformation'>General Information</a></h2>
-        <h2><a href="#" class="nav-link" data-target='orders'>Orders</a></h2>
-        <h2><a href="#" class="nav-link" data-target='purchaseHistory'>Purchase History</a></h2>
-    </div>
-
-    <div id="info-container">
-        <!-- GENERAL INFORMATION -->
-        <div id="GenInformation">
-            <p>Address: </p> <!-- Address details -->
-            <p>Email: </p>
-            <p>Phone: </p>
+    <div class="main-content">
+        <!-- PROFILE PICTURE -->
+        <div id="profilePicContainer">
+            <img src="../pictures/sustain-communities.jpg" alt="profile picture">
         </div>
 
-        <!-- ORDERS -->
-        <div id="orders" class="hidden">
-            <table id="orders-table">
-                <tr>
-                    <th colspan="2">Product</th>
-                    <th>Price each</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th>Actions</th>
-                </tr>
+        <!-- USERNAME -->
+        <h1>Username</h1>
 
-                <!-- examples -->
-                <tr>
-                    <!-- picture and name -->
-                    <td id="product-pic-container">
-                        <img src="../pictures/egg.png" alt="">
-                    </td>
-
-                    <td><p>Product1</p></td> <!-- Product Name -->
-                    <td>5.00</td> <!-- Price each -->
-                    <td>4</td> <!-- Quantity -->
-                    <td>20.00</td> <!-- Total Price -->
-
-                    <!-- Actions -->
-                    <td id="action-cell">
-                        <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
-                        <button class="delete-button">cancel</button>
-                    </td>
-                </tr>
-            </table>
-            <br>
+        <div id="consumerButtonContainer">
+            <button id="consumer-edit-button"><img src="../icons/editWhite.png" alt="edit"></button>
+            <a id="customer-cart-button" href="cart.html"><img src="../icons/cart-green.png" alt="cart"></a>
+            <a id="consumer-chat-button" href="../BOTH/chat.html"><img src="../icons/message.png" alt="chats"></a>
+            <button id="logout-button">Logout</button>
         </div>
 
-        <!-- PURCHASE HISTORY -->
-        <div id="purchaseHistory" class="hidden">
-            <table id="purchase-history-table">
-                <tr>
-                    <th>OrderID</th>
-                    <th>Date Received</th>
-                    <th>Seller</th>
-                    <th>Selling Type</th>
-                    <th>Total Cost</th>
-                    <th>Action</th>
-                </tr>
-
-                <!-- examples -->
-                <tr>
-                    <td>12345</td>
-                    <td>1/2/2024</td>
-                    <td>Juan Tamad</td>
-                    <td>Delivery</td>
-                    <td>120.00</td>
-
-                    <!-- Actions -->
-                    <td id="action-cell">
-                        <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
-                    </td>
-                </tr>
-            </table>
+        <!-- NAVIGATION -->
+        <div id="navigation">
+            <h2><a href="#" class="nav-link active" data-target='GenInformation'>General Information</a></h2>
+            <h2><a href="#" class="nav-link" data-target='orders'>Orders</a></h2>
+            <h2><a href="#" class="nav-link" data-target='purchaseHistory'>Purchase History</a></h2>
         </div>
 
+        <div id="info-container">
+            <!-- GENERAL INFORMATION -->
+            <div id="GenInformation">
+                <p>Address: </p> <!-- Address details -->
+                <p>Email: </p>
+                <p>Phone: </p>
+            </div>
+
+            <!-- ORDERS -->
+            <div id="orders" class="hidden">
+                <table id="orders-table">
+                    <tr>
+                        <th colspan="2">Product</th>
+                        <th>Price each</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <!-- examples -->
+                    <tr>
+                        <!-- picture and name -->
+                        <td id="product-pic-container">
+                            <img src="../pictures/egg.png" alt="">
+                        </td>
+
+                        <td><p>Product1</p></td> <!-- Product Name -->
+                        <td>5.00</td> <!-- Price each -->
+                        <td>4</td> <!-- Quantity -->
+                        <td>20.00</td> <!-- Total Price -->
+
+                        <!-- Actions -->
+                        <td id="action-cell">
+                            <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
+                            <button class="delete-button">cancel</button>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+
+            <!-- PURCHASE HISTORY -->
+            <div id="purchaseHistory" class="hidden">
+                <table id="purchase-history-table">
+                    <tr>
+                        <th>OrderID</th>
+                        <th>Date Received</th>
+                        <th>Seller</th>
+                        <th>Selling Type</th>
+                        <th>Total Cost</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <!-- examples -->
+                    <tr>
+                        <td>12345</td>
+                        <td>1/2/2024</td>
+                        <td>Juan Tamad</td>
+                        <td>Delivery</td>
+                        <td>120.00</td>
+
+                        <!-- Actions -->
+                        <td id="action-cell">
+                            <a href="ConsumerOrderView.html"><button class="view-button">view</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
     </div>
     <br>
 
