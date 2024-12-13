@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Email = $_POST['Email'];
     $Phone = $_POST['Phone'];
     $Password = md5($_POST['Password']); // Hash the password
+    $Roles = $POST['Roles'];
 
 
     // Check if the email already exists
@@ -170,6 +171,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="password">Password</label><br>
             <input type="password" name="Password" id="Password" required>
             <br>
+
+            <input type="hidden" name="Roles" id="Roles "customAttribute="consumer"/>
+
         </div>
         <br><br>
 
