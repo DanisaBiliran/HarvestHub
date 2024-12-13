@@ -1,3 +1,6 @@
+<?
+
+>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +42,7 @@
             <button id="consumer-edit-button"><img src="../icons/editWhite.png" alt="edit"></button>
             <a id="customer-cart-button" href="cart.html"><img src="../icons/cart-green.png" alt="cart"></a>
             <a id="consumer-chat-button" href="../BOTH/chat.html"><img src="../icons/message.png" alt="chats"></a>
-            <button id="logout-button">Logout</button>
+            <a href="../logout.php"> <button id="logout-button">Logout</button> </a>
         </div>
 
         <!-- NAVIGATION -->
@@ -157,3 +160,4 @@
 
 </body>
 </html>
+
