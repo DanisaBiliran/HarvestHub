@@ -1,6 +1,6 @@
 // Function to load the header
 function loadHeader() {
-    fetch('../../FARMER/farmerHeader.html')
+    fetch('http://localhost/HarvestHub/FARMER/farmerHeader.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
@@ -10,7 +10,7 @@ function loadHeader() {
 
 // Function to load the footer
 function loadFooter() {
-    fetch('../../BOTH/footer.html')
+    fetch('http://localhost/HarvestHub/BOTH/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;
