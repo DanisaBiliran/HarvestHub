@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+// Debugging
+// echo "Session Debug: <br>";
+// echo "First Name: " . $_SESSION['firstName'] . "<br>";
+// echo "Roles: " . $_SESSION['Roles'] . "<br>";  
+// echo "Id: " . $_SESSION['Id'] . "<br>";  
+// exit; 
+
+if (!isset($_SESSION['Id']) || $_SESSION['Roles'] != 'farmer') {
+    header("Location: farmerLogin.php");
+    exit;
+}
+include 'C:\xampp\htdocs\HarvestHub\db_connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +30,9 @@
     <title>HarvestHub</title>
   </head>
   <body>
+<!-- debug -->
+<!-- <h1>Welcome, <?php //echo htmlspecialchars($_SESSION['firstName']); ?>!</h1> -->
+ 
     <nav>
       <div class="logo-container">
         <div class="logo"><img src="../pictures/ALCED/HarvestHub_logo.png" /></div>

@@ -9,22 +9,32 @@ $message = ""; // To display login error messages
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Email = $_POST['Email'];
-    $Password = md5($_POST['Password']); // Password hashed with MD5
+    $Password = md5($_POST['Password']); // Password hashed with MD5  
 
     // Check user in the database
     $sql = "SELECT * FROM tbl_farmeraccount WHERE Email = '$Email' AND Password = '$Password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
+        // Fetch the user data
         $user = $result->fetch_assoc();
-        
         $_SESSION['Id'] = $user['Id'];
         $_SESSION['firstName'] = $user['firstName'];
+        $_SESSION['Roles'] = $user['Roles'];
+    
+        //just for debugging, to properly access comment out header
+        echo "Session Debug: <br>";
+        echo "Id: " . $_SESSION['Id'] . "<br>";
+        echo "First Name: " . $_SESSION['firstName'] . "<br>";
+        echo "Roles: " . $_SESSION['Roles'] . "<br>";
 
-        // Redirect to farmers
-        header("Location: farmers.php");
-        exit;
-       
+  
+
+        if ($user['Roles'] == 'farmer') 
+            {
+                header("Location: ../FARMER/farmerShop.php");
+            } 
+            exit;
     } else {
         $message = "Invalid email or password.";
     }
@@ -36,21 +46,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="../CSS/signUp.css">
-
     <title>Farmer Login</title>
+
 </head>
 <body>
     <br>
     <a onclick="history.back()"><img src="../icons/back.png" alt="back"></a>
     <h1>Farmer Login</h1>
+    <?php if ($message): ?>
+            <p class="error"><?php echo $message; ?></p>
+        <?php endif; ?>
 
     <form method="POST" action="">
         <div>
             <!-- EMAIL -->
             <label for="username">Email</label><br>
-            <input type="text" name="Email" placeholder="Enter your first name" id="Email" required>
+            <input type="text" name="Email" placeholder="Enter your email" id="Email" required>
             <br><br>
 
             <!-- PASSWORD -->

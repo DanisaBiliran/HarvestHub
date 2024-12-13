@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Email = $_POST['Email'];
     $Phone = $_POST['Phone'];
     $Password = md5($_POST['Password']); // Hash the password
-
+    $Roles = $_POST['Roles'];
 
     // Check if the email already exists
     $check_email = "SELECT * FROM tbl_farmeraccount WHERE Email = '$Email'";
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $message = "This email is already registered.";
     } else {
         // Insert new user into the database
-        $sql = "INSERT INTO tbl_farmeraccount (firstName, lastName, Street, Barangay, City, Email, Phone, Password) VALUES ('$firstName', '$lastName', '$Street', '$Barangay', '$City', '$Email','$Phone','$Password')";
+        $sql = "INSERT INTO tbl_farmeraccount (firstName, lastName, Street, Barangay, City, Email, Phone, Password, Roles) VALUES ('$firstName', '$lastName', '$Street', '$Barangay', '$City', '$Email','$Phone','$Password' ,'$Roles')";
         
         if ($conn->query($sql) === TRUE) {
             $message = "Registration successful! You can now log in.";
@@ -170,6 +170,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="password">Password</label><br>
             <input type="password" name="Password" id="Password" required>
             <br>
+
+            <input type="hidden" name="Roles" id="Roles" value="farmer"/>
+            <p>Already have an account? <a href="loginAs.html">Login here</a></p>
+            
+
         </div>
         <br><br>
 

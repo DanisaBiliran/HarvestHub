@@ -43,6 +43,16 @@ form div{
     padding: 10px 25px 10px 0;
 }
 
+input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+button {
+    padding: 10px 20px;
+}
+
 input, select{
     font-size: large;
     width: 90%;

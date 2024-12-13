@@ -1,4 +1,5 @@
-<!-- HEADER FOR BOTH FARMER AND CONSUMER -->
+
+
 <header>
     <a href="" style="text-decoration: none;">
         <div class="header-left">
@@ -16,7 +17,7 @@
 
         <ul style="list-style-type: none;">
             <li><a href="../BOTH/shop.html" class="nav-texts">Shop</a></li>
-            <li><a href="farmerUser.html"><img src="../icons/user.png" alt="user" class="header-icons"></a></li>
+            <li><a href="farmerUser.php"><img src="../icons/user.png" alt="user" class="header-icons"></a></li>
         </ul>
     </nav>
 </header>

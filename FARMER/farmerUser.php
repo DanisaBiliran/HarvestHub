@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+// Debugging
+// echo "Session Debug: <br>";
+// echo "First Name: " . $_SESSION['firstName'] . "<br>";
+// echo "Roles: " . $_SESSION['Roles'] . "<br>";  
+// echo "Id: " . $_SESSION['Id'] . "<br>";  
+// exit; 
+
+if (!isset($_SESSION['Id']) || $_SESSION['Roles'] != 'farmer') {
+    header("Location: farmerLogin.php");
+    exit;
+}
+include 'C:\xampp\htdocs\HarvestHub\db_connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +85,7 @@
     <div id="buttonContainer">
         <button id="edit-button"><img src="../icons/editWhite.png" alt="edit"></button>
         <a id="chat-button" href="../BOTH/chat.html"><img src="../icons/message.png" alt="chats"></a>
-        <button id="logout-button">Logout</button>
+        <a href="../logout.php"> <button id="logout-button">Logout</button> </a>
     </div>
 
     <div id="navigation">
@@ -212,7 +230,7 @@
                 // Hide all sections
                 document.querySelectorAll('#info-container > div').forEach(section => {
                     section.classList.add('hidden');
-                });
+                }); 
 
                 // Show the selected section
                 const targetId = this.getAttribute('data-target');

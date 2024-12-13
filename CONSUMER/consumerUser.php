@@ -1,5 +1,21 @@
 <?php
+
+session_start();
+
+// Debugging
+// echo "Session Debug: <br>";
+// echo "First Name: " . $_SESSION['firstName'] . "<br>";
+// echo "Roles: " . $_SESSION['Roles'] . "<br>";  
+// echo "Id: " . $_SESSION['Id'] . "<br>";  
+// exit; 
+
+if (!isset($_SESSION['Id']) || $_SESSION['Roles'] != 'consumer') {
+    header("Location: consumerLogin.php");
+    exit;
+}
+include 'C:\xampp\htdocs\HarvestHub\db_connect.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

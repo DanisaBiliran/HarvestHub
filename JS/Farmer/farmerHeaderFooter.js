@@ -1,6 +1,6 @@
 // Function to load the header
 function loadHeader() {
-    fetch('http://localhost/HarvestHub/FARMER/farmerHeader.html')
+    fetch('http://localhost/HarvestHub/FARMER/farmerHeader.php')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
