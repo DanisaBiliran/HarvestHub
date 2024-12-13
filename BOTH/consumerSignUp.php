@@ -1,3 +1,40 @@
+<?php
+// Include database connection
+include 'C:\xampp\htdocs\HarvestHub\db_connect.php';
+
+$message = ""; // To display success or error messages
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $Street = $_POST['Street'];
+    $Barangay = $_POST['Barangay'];
+    $City = $_POST['City'];
+    $Email = $_POST['Email'];
+    $Phone = $_POST['Phone'];
+    $Password = md5($_POST['Password']); // Hash the password
+
+
+    // Check if the email already exists
+    $check_email = "SELECT * FROM tbl_consumeraccount WHERE Email = '$Email'";
+    $result = $conn->query($check_email);
+
+    if ($result->num_rows > 0) {
+        $message = "This email is already registered.";
+    } else {
+        // Insert new user into the database
+        $sql = "INSERT INTO tbl_consumeraccount (firstName, lastName, Street, Barangay, City, Email, Phone, Password) VALUES ('$firstName', '$lastName', '$Street', '$Barangay', '$City', '$Email','$Phone','$Password')";
+        
+        if ($conn->query($sql) === TRUE) {
+            $message = "Registration successful! You can now log in.";
+        } else {
+            $message = "Error: " . $conn->error;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,30 +49,30 @@
     <br>
     <a onclick="history.back()"><img src="../icons/back.png" alt="back"></a>
     <h1>Consumer Sign Up</h1>
-  <!-- FIRST NAME -->
-    <form action="">
+
+    <form action="consumerSignUp.php" method="POST">
         <div>
             <!-- FIRST NAME -->
             <label for="first-name">First Name</label><br>
-            <input type="text" name="first-name" placeholder="Enter your first name" required>
+            <input type="text" name="firstName" placeholder="Enter your first name" id="firstName" required>
             <br><br>
 
             <!-- LASTNAME -->
             <label for="last-name">Last Name</label><br>
-            <input type="text" name="last-name" placeholder="Enter your lastname" required>
+            <input type="text" name="lastName" placeholder="Enter your lastname" id="lastName" required>
             <br>
-        </div>
+        </div>   
         <br><br>
 
         <div>
             <!-- STREET -->
             <label for="street">Street</label><br>
-            <input type="text" name="street" placeholder="Enter street/zone" required>
+            <input type="text" name="Street" placeholder="Enter street/zone" id="Street" required>
             <br><br>
             
             <!-- BARANGAY -->
             <label for="barangay">Barangay</label><br>
-            <select id="barangay" name="barangay">
+            <select id="Barangay" name="Barangay">
                 <option value="arena_blanco">Arena Blanco</option>
                 <option value="ayala">Ayala</option>
                 <option value="baliwasan">Baliwasan</option>
@@ -113,7 +150,7 @@
 
             <!-- CITY- READONLY (set to Zamboanga City)-->
             <label for="city">City</label><br>
-            <input type="text" name="city" placeholder="Zamboanga City" readonly>
+            <input type="text" name="City" placeholder="Zamboanga City" id="City"  readonly>
             <br>
         </div>
         <br><br>
@@ -121,17 +158,17 @@
         <div>
             <!-- EMAIL -->
             <label for="email">Email</label><br>
-            <input type="email" name="email" id="email" placeholder="example@email.com">
+            <input type="email" name="Email" id="Email" placeholder="example@email.com"  >
             <br><br>
 
             <!-- PHONE -->
             <label for="phone">Phone</label><br>
-            <input type="phone" name="phone" id="phone" placeholder="09123456789">
+            <input type="phone" name="Phone" id="Phone" placeholder="09123456789"  >
             <br><br>
 
             <!-- PASSWORD -->
             <label for="password">Password</label><br>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="Password" id="Password" required>
             <br>
         </div>
         <br><br>
