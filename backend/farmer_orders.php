@@ -2,16 +2,13 @@
 session_start();
 include 'db_connect.php';
 
-// Check if the user is a farmer
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'farmer') {
     header("Location: login.php");
     exit;
 }
 
-// Get the farmer's ID
 $farmer_id = $_SESSION['user_id'];
 
-// Fetch orders for the farmer's products
 $sql = "SELECT o.order_id, o.consumer_id, o.quantity, o.total_price, o.delivery_date, 
                p.name AS product_name, u.name AS consumer_name 
         FROM orders o
@@ -75,7 +72,6 @@ $result = $conn->query($sql);
     </div>
 </nav>
 
-<!-- Content -->
 <div class="container mt-5 pt-5">
     <div class="card p-4 shadow">
         <h2 class="fw-bold text-center mb-4">Orders for Your Products</h2>
@@ -115,7 +111,6 @@ $result = $conn->query($sql);
     </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

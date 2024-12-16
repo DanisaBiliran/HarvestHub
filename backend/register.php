@@ -1,24 +1,21 @@
 <?php
-// Include database connection
 include 'db_connect.php';
 
-$message = ""; // To display success or error messages
+$message = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = md5($_POST['password']); // Hash the password
+    $password = md5($_POST['password']);
     $address = $_POST['address'];
     $role = $_POST['role'];
 
-    // Check if the email already exists
     $check_email = "SELECT * FROM users WHERE email = '$email'";
     $result = $conn->query($check_email);
 
     if ($result->num_rows > 0) {
         $message = "This email is already registered.";
     } else {
-        // Insert new user into the database
         $sql = "INSERT INTO users (name, email, password, address, role) VALUES ('$name', '$email', '$password', '$address', '$role')";
         
         if ($conn->query($sql) === TRUE) {

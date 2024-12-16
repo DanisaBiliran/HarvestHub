@@ -50,7 +50,6 @@ $avg_rating = ($result_rating->num_rows > 0) ? $result_rating->fetch_assoc()['av
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="mynavbar navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #004643;">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="index.php">HarvestHub</a>
@@ -82,9 +81,7 @@ $avg_rating = ($result_rating->num_rows > 0) ? $result_rating->fetch_assoc()['av
     </div>
 </nav>
 
-<!-- Main Content -->
 <div class="container mt-5 pt-5">
-    <!-- Farmer Info -->
     <div class="card mb-4 p-4 shadow">
         <h2 class="fw-bold text-center"><?php echo htmlspecialchars($farmer['name']); ?></h2>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($farmer['email']); ?></p>
@@ -94,7 +91,6 @@ $avg_rating = ($result_rating->num_rows > 0) ? $result_rating->fetch_assoc()['av
         </p>
     </div>
 
-    <!-- Farmer's Products -->
     <div class="card p-4 shadow">
         <h3 class="fw-bold mb-3">Products</h3>
         <?php if ($result_products->num_rows > 0): ?>
@@ -130,7 +126,6 @@ $avg_rating = ($result_rating->num_rows > 0) ? $result_rating->fetch_assoc()['av
     </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Fetch user details for pre-filling the form
 $sql = "SELECT * FROM users WHERE user_id = $user_id";
 $result = $conn->query($sql);
 if ($result->num_rows === 0) {
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $conn->real_escape_string($_POST['email']);
     $address = $conn->real_escape_string($_POST['address']);
 
-    // Update user details
     $sql_update = "UPDATE users SET name = '$name', email = '$email', address = '$address' WHERE user_id = $user_id";
     if ($conn->query($sql_update)) {
         $_SESSION['message'] = "Profile updated successfully!";

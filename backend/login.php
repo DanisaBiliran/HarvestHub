@@ -1,28 +1,23 @@
 <?php
-// Start session
 session_start();
 
-// Include database connection
 include 'db_connect.php';
 
-$message = ""; // To display login error messages
+$message = ""; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = md5($_POST['password']); // Password hashed with MD5
 
-    // Check user in the database
     $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
-        // User exists, set session variables
         $user = $result->fetch_assoc();
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['name'] = $user['name'];
         $_SESSION['role'] = $user['role'];
 
-        // Redirect based on role
         if ($user['role'] == 'farmer') {
             header("Location: farmer_dashboard.php");
         } else {
@@ -54,12 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php endif; ?>
     <form action="" method="POST">
         <div>
-            <!-- USERNAME -->
             <label for="email">Email:</label><br>
             <input type="email" name="email" id="email" required>
             <br><br>
 
-            <!-- PASSWORD -->
             <label for="password">Password</label><br>
             <input type="password" name="password" id="password" required>
             <br><br><br>

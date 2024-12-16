@@ -96,7 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && (isset($_GET['name']) || isset($_GET
     </div>
 </nav>
 
-<!-- Main Content -->
 <div class="container mt-5 pt-4">
     <div class="row justify-content-center">
         <div class="col-md-10">
