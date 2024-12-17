@@ -40,7 +40,7 @@ $result = $conn->query($sql);
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #004643;">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.php">HarvestHub</a>
+        <a class="navbar-brand fw-bold" href="">HarvestHub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,17 +51,17 @@ $result = $conn->query($sql);
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.php?user_id=<?php echo $_SESSION['user_id']; ?>">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="farmer_dashboard.php">Profile</a>
+                        <a class="nav-link" href="farmer_dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="add_product.php">Add New Product</a>
+                        <a class="nav-link" href="add_product.php">Add New Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="farmer_orders.php">Orders</a>
+                        <a class="nav-link active" href="farmer_orders.php">Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
@@ -105,9 +105,6 @@ $result = $conn->query($sql);
         <?php else: ?>
             <p class="text-center">You currently have no orders for your products.</p>
         <?php endif; ?>
-        <div class="text-center mt-4">
-            <a href="farmer_dashboard.php" class="btn btn-back px-4 py-2">Back to Dashboard</a>
-        </div>
     </div>
 </div>
 

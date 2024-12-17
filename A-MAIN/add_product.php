@@ -32,38 +32,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Add Product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        body {
-            background-color: #abd1c6;
-            color: #fffffe;
-        }
-        .navbar, .card {
-            background-color: #004643 !important;
-        }
-        .navbar-brand, .nav-link, .card-title, .form-label, .btn {
-            color: #fffffe !important;
-        }
-        .btn-primary {
-            background-color: #004643;
-            border-color: #004643;
-        }
-        .btn-primary:hover {
-            background-color: #032f2a;
-            border-color: #032f2a;
-        }
-        .form-control {
-            background-color: #fffffe;
-            color: #000;
-        }
-        a {
-            color: #004643;
-        }
+        body { background-color: #abd1c6; }
+        .card { background-color: #004643; color: #fffffe; border: none; }
+        .table { color: #fffffe; }
+        .table thead th { background-color: #004643; color: #fffffe; }
+        a { color: #fffffe; }
+        a.btn-back { color: #fffffe; background-color: #004643; border: none; }
+        a.btn-back:hover { background-color: #003333; color: #abd1c6; }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #004643;">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.php">HarvestHub</a>
+        <a class="navbar-brand fw-bold" href="">HarvestHub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,11 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.php?user_id=<?php echo $_SESSION['user_id']; ?>">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="farmer_dashboard.php">Profile</a>
+                        <a class="nav-link" href="farmer_dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="add_product.php">Add New Product</a>

@@ -56,7 +56,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'consumer') {
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item"><a class="nav-link" href="products.php">Browse Products</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.php?user_id=<?php echo $_SESSION['user_id']; ?>">Profile</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="products.php">Browse Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="consumer_orders.php">Your Orders</a></li>
                     <li class="nav-item"><a class="nav-link" href="search_farmers.php">Search Farmers</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>

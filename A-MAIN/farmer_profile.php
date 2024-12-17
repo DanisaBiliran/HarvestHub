@@ -52,7 +52,7 @@ $avg_rating = ($result_rating->num_rows > 0) ? $result_rating->fetch_assoc()['av
 
 <nav class="mynavbar navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #004643;">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="index.php">HarvestHub</a>
+        <a class="navbar-brand fw-bold" href="">HarvestHub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

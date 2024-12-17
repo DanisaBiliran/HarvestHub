@@ -69,6 +69,9 @@ $result = $conn->query($sql);
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.php?user_id=<?php echo $_SESSION['user_id']; ?>">Profile</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="products.php">Browse Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="consumer_orders.php">Your Orders</a></li>
                     <li class="nav-item"><a class="nav-link" href="search_farmers.php">Search Farmers</a></li>
@@ -83,7 +86,7 @@ $result = $conn->query($sql);
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card p-4">
-                <h2 class="card-title text-center mb-4">Available Products</h2>
+                <h2 class="card-title text-center mb-4" style="color: white;">Available Products</h2>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>

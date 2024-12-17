@@ -42,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <br>
-    <a onclick="history.back()"><img src="../icons/back.png" alt="back"></a>
+    <br>
+    
     <h1>Login</h1>
     <?php if ($message): ?>
             <p class="error"><?php echo $message; ?></p>
@@ -55,13 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="password">Password</label><br>
             <input type="password" name="password" id="password" required>
-            <br><br><br>
+            <br><br>
+            <p>Don't have an account? <a href="register.php">Register here</a>.</p> 
 
             <input type="submit" class="submit-button">
         </div>
     </form>
-    <div style="margin-right: 100px;">
-        <p>Don't have an account? <a href="register.php">Register here</a>.</p>
-    </div>
+
 </body>
 </html>

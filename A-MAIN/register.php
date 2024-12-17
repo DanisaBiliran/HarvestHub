@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="register-container">
-        <h1>Register</h1>
+        <h1>Sign Up</h1>
         <?php if ($message): ?>
             <p class="message"><?php echo $message; ?></p>
         <?php endif; ?>
@@ -137,10 +137,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <option value="consumer">Consumer</option>
                 </select>
                 <br><br>
-                <button type="submit" class="submit-button">Register</button>
+                <p>Already have an account? <a href="login.php">Log in here</a>.</p>
+                <button type="submit" class="submit-button">Sign Up</button>
             </div>
         </form>
-        <p>Already have an account? <a href="login.php">Log in here</a>.</p>
     </div>
 </body>
 </html>
